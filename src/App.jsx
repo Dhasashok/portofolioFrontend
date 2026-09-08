@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PageLoader from './components/PageLoader';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -10,48 +11,83 @@ import Education from './components/Education';
 import Certifications from './components/Certifications';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import ResumeModal from './components/ResumeModal';
 
 export default function App() {
-  const [isResumeOpen, setIsResumeOpen] = useState(false);
-  const [isDark, setIsDark] = useState(() => {
-    // Check saved theme or default to light mode like the reference
-    const saved = localStorage.getItem('theme');
-    return saved ? saved === 'dark' : false;
-  });
+  const [showLoader, setShowLoader] = useState(true);
+  const [fadeOut, setFadeOut] = useState(false);
 
+  // Ensure dark mode is completely removed
   useEffect(() => {
-    const root = document.documentElement;
-    if (isDark) {
-      root.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      root.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
-    }
-  }, [isDark]);
+    document.documentElement.classList.remove('dark');
+    localStorage.removeItem('theme');
+  }, []);
 
-  const toggleTheme = () => {
-    setIsDark(prev => !prev);
-  };
+  // Loader lifecycle matching khushikhurana.tech
+  useEffect(() => {
+    let minTimeElapsed = false;
+    let pageLoaded = false;
+
+    const triggerFadeOut = () => {
+      if (minTimeElapsed && pageLoaded) {
+        setFadeOut(true);
+        setTimeout(() => {
+          setShowLoader(false);
+        }, 550);
+      }
+    };
+
+    // Allow stroke drawing animation cycle to play (~1.85s)
+    const minTimer = setTimeout(() => {
+      minTimeElapsed = true;
+      triggerFadeOut();
+    }, 1850);
+
+    if (document.readyState === 'complete') {
+      pageLoaded = true;
+      triggerFadeOut();
+    } else {
+      const handleLoad = () => {
+        pageLoaded = true;
+        triggerFadeOut();
+      };
+      window.addEventListener('load', handleLoad);
+      return () => {
+        clearTimeout(minTimer);
+        window.removeEventListener('load', handleLoad);
+      };
+    }
+
+    return () => clearTimeout(minTimer);
+  }, []);
+
+  // Lock scroll while intro loader is visible
+  useEffect(() => {
+    if (showLoader) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [showLoader]);
 
   return (
-    <div className="min-h-screen transition-colors duration-300">
-      {/* Sticky Header with Theme Toggle */}
-      <Navbar
-        onOpenResume={() => setIsResumeOpen(true)}
-        isDark={isDark}
-        onToggleTheme={toggleTheme}
-      />
+    <div className="min-h-screen">
+      {/* Opening Intro Page Loader */}
+      {showLoader && <PageLoader fadeOut={fadeOut} />}
+
+      {/* Sticky Header */}
+      <Navbar />
 
       {/* Main Content Flow */}
       <main>
-        <Hero onOpenResume={() => setIsResumeOpen(true)} />
-        <About onOpenResume={() => setIsResumeOpen(true)} />
-        <Services />
-        <Experience />
+        <Hero />
         <Projects />
+        <Experience />
+        <Services />
         <Skills />
+        <About />
         <Education />
         <Certifications />
         <Contact />
@@ -59,12 +95,6 @@ export default function App() {
 
       {/* Footer */}
       <Footer />
-
-      {/* Interactive Resume (CV) Modal */}
-      <ResumeModal
-        isOpen={isResumeOpen}
-        onClose={() => setIsResumeOpen(false)}
-      />
     </div>
   );
 }

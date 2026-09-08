@@ -5,15 +5,13 @@ import {
   Mail, 
   Phone, 
   FileText, 
-  Sparkles,
   Award,
-  Layers,
-  Code2
+  ExternalLink
 } from 'lucide-react';
 import { LinkedinIcon } from './Icons';
 import { personalInfo } from '../data/portfolioData';
 
-export default function About({ onOpenResume }) {
+export default function About() {
   return (
     <section id="about" className="section about">
       <div className="container">
@@ -104,25 +102,29 @@ export default function About({ onOpenResume }) {
               </div>
             </div>
 
-            {/* Resume Button linked directly to attached PDF and modal */}
-            <div style={{ display: 'flex', gap: '0.5rem', marginTop: '0.5rem' }}>
+            {/* Resume Action Buttons */}
+            <div style={{ display: 'flex', gap: '0.5rem', marginTop: '0.5rem', flexWrap: 'wrap' }}>
               <a
                 href={personalInfo.resumeUrl}
                 download="Ashok_Rohidas_Dhas_Resume.pdf"
                 className="btn btn-primary about__resume"
+                style={{ flex: 1, minWidth: '150px' }}
               >
                 <FileText size={16} />
                 <span>Download Resume</span>
               </a>
 
-              <button
-                onClick={onOpenResume}
+              <a
+                href={personalInfo.resumeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn btn-secondary"
-                style={{ minHeight: '46px', padding: '0.75rem 1rem' }}
-                title="Preview Resume PDF"
+                style={{ minHeight: '46px', padding: '0.75rem 1rem', display: 'inline-flex', alignItems: 'center', gap: '0.35rem' }}
+                title="View Resume in new tab"
               >
-                <span>Preview</span>
-              </button>
+                <span>View PDF</span>
+                <ExternalLink size={14} />
+              </a>
             </div>
           </div>
 

@@ -26,7 +26,7 @@ export const personalInfo = {
     "React.js Developer",
     "Node.js Developer"
   ],
-  heroBio: "B.E. Computer Engineering graduate with hands-on experience building full-stack web applications using Java, JavaScript, React.js, Node.js, Express.js, and MySQL.",
+  heroBio: "Full-Stack Software Developer building scalable web applications with React, Node.js, and Cloud Databases. Engineered production systems including a PG operations platform saving 15+ hrs/week and a live hospital queue management system.",
   aboutBio: [
     "I am a B.E. Computer Engineering graduate from Genba Sopanrao Moze College of Engineering, Pune, with a CGPA of 8.50/10. I have hands-on experience in Java, JavaScript, React.js, Node.js, Express.js, and MySQL, along with practical exposure to full-stack web development.",
     "I enjoy building practical software solutions, designing responsive interfaces, developing REST APIs, integrating databases, and solving real-world problems through technology.",
@@ -43,34 +43,34 @@ export const personalInfo = {
 export const servicesData = [
   {
     id: "full-stack",
-    title: "Full Stack Web Development",
-    description: "Building complete web applications with React.js, Node.js, Express.js, REST APIs and MySQL.",
+    title: "Full-Stack System Architecture",
+    description: "Engineering end-to-end web applications integrating reactive frontends, resilient Node.js services, and relational database layers.",
     badge: "End-to-End",
-    technologies: ["React.js", "Node.js", "Express.js", "MySQL", "REST API"],
+    technologies: ["React.js", "Node.js", "Express.js", "MySQL", "REST API", "Vercel"],
     color: "purple"
   },
   {
     id: "frontend",
-    title: "Frontend Development",
-    description: "Creating responsive, interactive and user-friendly interfaces using React.js, HTML, CSS and JavaScript.",
+    title: "Modern Reactive Frontend",
+    description: "Crafting high-performance, accessible, and responsive interfaces with modular React component patterns and state management.",
     badge: "UI/UX & SPAs",
-    technologies: ["React.js", "JavaScript ES6+", "HTML5", "CSS3", "Tailwind CSS"],
+    technologies: ["React.js", "JavaScript ES6+", "HTML5", "CSS3", "Responsive UI"],
     color: "blue"
   },
   {
     id: "backend",
-    title: "Backend Development",
-    description: "Developing REST APIs, authentication systems, role-based access control and backend workflows using Node.js and Express.js.",
+    title: "Scalable Backend & Real-Time APIs",
+    description: "Developing secured RESTful endpoints, role-based authorization (RBAC), stateless JWT authentication, and live Socket.io WebSockets.",
     badge: "Scalable APIs",
-    technologies: ["Node.js", "Express.js", "JWT Auth", "RBAC", "Socket.io"],
+    technologies: ["Node.js", "Express.js", "JWT Auth", "RBAC", "Socket.io", "Postman"],
     color: "green"
   },
   {
     id: "database",
-    title: "API & Database Integration",
-    description: "Designing APIs and integrating applications with MySQL and cloud database environments.",
-    badge: "Architecture",
-    technologies: ["MySQL", "TiDB Cloud", "Database Design", "Postman", "Workbench"],
+    title: "Relational & Cloud Databases",
+    description: "Designing normalized SQL schemas, indexing strategies, and integrating cloud database environments like TiDB Cloud and MySQL.",
+    badge: "Data Architecture",
+    technologies: ["MySQL", "TiDB Cloud", "Database Design", "SQL Modeling", "Workbench"],
     color: "orange"
   }
 ];
@@ -150,25 +150,24 @@ export const projectsData = [
     id: "royal-orchid",
     featured: true,
     title: "Royal Orchid – PG Management System",
-    category: "Full Stack Web Application",
+    category: "Accommodation · Full Stack",
+    oneline: "Automates tenant onboarding, live bed allocations, rent accounting, and grievance resolution.",
     tagline: "Comprehensive Accommodation & Tenant Operations Management Platform",
-    description: "Built an intuitive full-stack PG management solution with specialized modules for tenant management, room allocation, payments, and complaints.",
-    technologies: ["React.js", "Node.js", "Express.js", "TiDB Cloud", "Vercel", "Render", "TestSprite"],
+    description: "Built a production-ready full-stack accommodation portal that automates daily operational workflows for PG owners, eliminating manual registers and spreadsheet errors.",
+    technologies: ["React.js", "Node.js", "Express.js", "TiDB Cloud", "Vercel", "Render", "TestSprite", "JWT"],
     stats: [
       { label: "Manual Time Saved", value: "15 hrs/wk" },
       { label: "REST APIs", value: "40+" },
       { label: "Security", value: "JWT + RBAC" },
       { label: "Cloud DB", value: "TiDB Cloud" }
     ],
-    achievements: [
-      "Improved administrative workflow efficiency.",
-      "Reduced time spent on manual tasks by approximately 15 hours weekly.",
-      "Engineered 40+ REST APIs.",
-      "Implemented JWT authentication and RBAC (Role-Based Access Control).",
-      "Implemented real-time bed allocation and occupancy tracking.",
-      "Added payment workflows and automated ledger records.",
-      "Deployed using Vercel, Render, and TiDB Cloud for seamless uptime.",
-      "Conducted application and API testing using TestSprite."
+    features: [
+      "Real-time bed allocation and interactive room occupancy visualization",
+      "Automated rent collection, invoice generation, and financial ledger logs",
+      "Tenant grievance dispatch system with priority categorization and resolution tracking",
+      "Role-Based Access Control (RBAC) securing resident, staff, and owner portals",
+      "Engineered 40+ REST API endpoints tested and benchmarked via TestSprite",
+      "High-availability multi-tier deployment across Vercel, Render, and TiDB Distributed SQL"
     ],
     architecture: {
       frontend: "React.js dynamic client with modular component design and responsive dashboards.",
@@ -180,23 +179,17 @@ export const projectsData = [
     githubUrl: null,
     liveUrl: "https://pgmanagement-frontend.vercel.app/",
     image: "/projects/royal-orchid-preview.png",
-    screenshots: [
-      {
-        url: "/projects/royal-orchid-preview.png",
-        title: "Live Portal & Bed Availability",
-        caption: "Royal Orchid PG resident portal with interactive bed explorer, amenities, and security overview."
-      }
-    ],
-    videoUrl: null // Add video path like "/projects/royal-orchid-demo.mp4" or Loom/YouTube embed
+    statBadge: "15 hrs/wk Saved · 40+ APIs · Deployed Live"
   },
   {
     id: "mediqueue",
     featured: false,
     title: "MediQueue – Hospital Queue Management System",
-    category: "Full Stack Healthcare Solution",
+    category: "Healthcare OPD · Real-Time",
     period: "2025 – 2026",
+    oneline: "Eliminates waiting room overcrowding via real-time WebSocket token progression and tri-role dashboards.",
     tagline: "Smart OPD Queue & Patient Flow Optimization System",
-    description: "Built a full-stack hospital OPD management system with dedicated Patient, Doctor, and Admin dashboards.",
+    description: "A synchronized hospital management suite designed to streamline outpatient flow with instant digital token generation, real-time consultation tracking, and digital prescription delivery.",
     technologies: ["React.js", "Node.js", "Express.js", "MySQL", "Socket.io", "JWT", "Nodemailer"],
     stats: [
       { label: "Dashboards", value: "3 Roles" },
@@ -205,15 +198,12 @@ export const projectsData = [
       { label: "Check-in", value: "QR Enabled" }
     ],
     features: [
-      "Patient dashboard for token generation and queue status monitoring",
-      "Doctor dashboard for patient consultation and digital prescription management",
-      "Admin dashboard for OPD schedule and hospital staff oversight",
-      "Robust REST APIs for seamless frontend-backend communication",
-      "JWT authentication and OTP verification for secure login",
-      "Role-based access control (RBAC) across all portal endpoints",
-      "Socket.io real-time queue updates without manual page refreshes",
-      "QR-based patient check-in at reception counters",
-      "Digital prescription management and automated hospital workflows"
+      "Tri-role synchronized dashboards tailored for Patients, Doctors, and Hospital Admins",
+      "Real-time WebSocket token progression via Socket.io with zero manual page refreshes",
+      "QR-based express check-in reducing reception counter bottlenecks and wait times",
+      "Digital prescription authoring and automated email delivery via Nodemailer",
+      "Stateless JWT authentication paired with OTP verification for patient records security",
+      "MySQL relational schema optimized with indexed queues and doctor consultation states"
     ],
     architecture: {
       frontend: "React.js with multi-role views, live queue visualizers, and digital prescription creation.",
@@ -222,10 +212,9 @@ export const projectsData = [
       communication: "Nodemailer for automated email notifications, token alerts, and OTP verification."
     },
     githubUrl: null,
-    liveUrl: null,
-    image: null,
-    screenshots: [],
-    videoUrl: null // Add video path like "/projects/mediqueue-demo.mp4" or Loom/YouTube embed
+    liveUrl: "https://frontend-phi-ruby-62.vercel.app/",
+    image: "/projects/mediqueue-preview.png",
+    statBadge: "3 Synchronized Roles · Real-Time WebSockets · Deployed Live"
   }
 ];
 
@@ -237,7 +226,7 @@ export const educationData = [
     degree: "B.E. Computer Engineering",
     university: "SPPU, Pune",
     period: "2023 – 2026",
-    grade: "CGPA: 8.50 / 10",
+    grade: "8.50 CGPA",
     highlight: "First Class with Distinction",
     status: "Completed / Final Year"
   },
@@ -247,7 +236,7 @@ export const educationData = [
     location: "Pune, Maharashtra",
     degree: "Diploma in Computer Engineering",
     period: "2021 – 2023",
-    grade: "Aggregate: 84.46%",
+    grade: "84.46% Aggregate",
     highlight: "Distinction",
     status: "Completed"
   },
@@ -257,7 +246,7 @@ export const educationData = [
     location: "Karjat, Maharashtra",
     degree: "Class XII – Higher Secondary Certificate (HSC)",
     period: "2019 – 2021",
-    grade: "72.00%",
+    grade: "72.00% HSC",
     highlight: "First Class",
     status: "Completed"
   },
@@ -267,7 +256,7 @@ export const educationData = [
     location: "Jamgaon, Beed, Maharashtra",
     degree: "Class X – Secondary School Certificate (SSC)",
     period: "2018 – 2019",
-    grade: "92.00%",
+    grade: "92.00% SSC",
     highlight: "Distinction",
     status: "Completed"
   }
@@ -302,9 +291,9 @@ export const certificationsData = [
 
 export const navLinks = [
   { name: "Home", href: "#home" },
-  { name: "About", href: "#about" },
-  { name: "Experience", href: "#experience" },
   { name: "Projects", href: "#projects" },
+  { name: "Experience", href: "#experience" },
   { name: "Skills", href: "#skills" },
+  { name: "About", href: "#about" },
   { name: "Contact", href: "#contact" }
 ];

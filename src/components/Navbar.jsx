@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Sun, Moon, FileText, Menu, X, ArrowRight } from 'lucide-react';
+import { FileText, Menu, X, ArrowUpRight } from 'lucide-react';
 import { navLinks, personalInfo } from '../data/portfolioData';
 
-export default function Navbar({ onOpenResume, isDark, onToggleTheme }) {
+export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
@@ -33,12 +33,11 @@ export default function Navbar({ onOpenResume, isDark, onToggleTheme }) {
 
   const handleNavClick = (e, href) => {
     e.preventDefault();
-    setMobileMenuOpen(false);
-    const targetId = href.substring(1);
-    const targetElement = document.getElementById(targetId);
-    if (targetElement) {
+    const id = href.substring(1);
+    const element = document.getElementById(id);
+    if (element) {
       const navOffset = 72;
-      const elementPosition = targetElement.getBoundingClientRect().top;
+      const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - navOffset;
 
       window.scrollTo({
@@ -46,60 +45,55 @@ export default function Navbar({ onOpenResume, isDark, onToggleTheme }) {
         behavior: 'smooth',
       });
     }
+    setMobileMenuOpen(false);
   };
 
   return (
     <header className={`navbar ${isScrolled ? 'navbar--scrolled' : ''}`}>
       <div className="container navbar__container">
-        {/* Brand */}
-        <a
-          href="#home"
+        {/* Brand Mark */}
+        <a 
+          href="#home" 
           onClick={(e) => handleNavClick(e, '#home')}
           className="navbar__brand"
-          aria-label="Ashok Dhas"
+          aria-label="Back to home top"
         >
-          <span className="navbar__brand-mark">A</span>
-          <span className="navbar__brand-name">Ashok</span>
+          <div className="navbar__brand-mark">
+            <span>{personalInfo.initials}</span>
+          </div>
+          <span className="navbar__brand-name">{personalInfo.shortName}</span>
         </a>
 
-        {/* Desktop Navigation */}
-        <nav className="navbar__desktop-nav">
-          {navLinks.map((link) => {
-            const isActive = activeSection === link.href.substring(1);
-            return (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
-                className={`navbar__link ${isActive ? 'navbar__link--active text-[var(--color-primary)] font-semibold' : ''}`}
-              >
-                {link.name}
-              </a>
-            );
-          })}
+        {/* Desktop Navigation Links */}
+        <nav className="navbar__desktop-nav" aria-label="Main Navigation">
+          {navLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              onClick={(e) => handleNavClick(e, link.href)}
+              className={`navbar__link ${activeSection === link.href.substring(1) ? 'navbar__link--active' : ''}`}
+            >
+              {link.name}
+            </a>
+          ))}
         </nav>
 
         {/* Action Controls */}
         <div className="navbar__actions">
-          {/* Theme Toggle Button */}
-          <button
-            onClick={onToggleTheme}
-            className="navbar__theme-button"
-            aria-label="Toggle theme"
-            title={isDark ? "Switch to Light Mode" : "Switch to Dark Mode"}
-          >
-            {isDark ? <Sun size={17} /> : <Moon size={17} />}
-          </button>
 
-          {/* Download Resume Button */}
-          <button
-            onClick={onOpenResume}
+          {/* Direct Resume Link (Opens in New Tab - Industry Standard) */}
+          <a
+            href={personalInfo.resumeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn btn-primary hidden sm:inline-flex"
             style={{ minHeight: '38px', padding: '0.45rem 1rem', fontSize: 'var(--text-xs)' }}
+            title="Open Resume in new tab"
           >
             <FileText size={14} />
             <span>Resume</span>
-          </button>
+            <ArrowUpRight size={13} style={{ marginLeft: '-2px', opacity: 0.85 }} />
+          </a>
 
           {/* Mobile Menu Button */}
           <button
@@ -129,17 +123,18 @@ export default function Navbar({ onOpenResume, isDark, onToggleTheme }) {
               </a>
             ))}
             <div style={{ padding: '0.5rem', marginTop: '0.3rem', borderTop: '1px solid var(--color-border-light)' }}>
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  onOpenResume();
-                }}
+              <a
+                href={personalInfo.resumeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileMenuOpen(false)}
                 className="btn btn-primary"
-                style={{ width: '100%', minHeight: '40px' }}
+                style={{ width: '100%', minHeight: '40px', justifyContent: 'center' }}
               >
                 <FileText size={15} />
-                <span>Download Resume (PDF)</span>
-              </button>
+                <span>View Resume (PDF)</span>
+                <ArrowUpRight size={14} />
+              </a>
             </div>
           </nav>
         </div>

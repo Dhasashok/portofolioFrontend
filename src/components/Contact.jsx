@@ -7,8 +7,7 @@ import {
   Send, 
   Check, 
   Copy, 
-  ArrowUpRight,
-  ChevronRight
+  ArrowUpRight
 } from 'lucide-react';
 import { LinkedinIcon } from './Icons';
 import { personalInfo } from '../data/portfolioData';
@@ -73,7 +72,9 @@ export default function Contact() {
           spread: 60,
           origin: { y: 0.6 }
         });
-      } catch (err) {}
+      } catch {
+        // Confetti is decorative; ignore if unsupported
+      }
 
       setFormData({
         name: '',

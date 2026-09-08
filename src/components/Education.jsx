@@ -62,32 +62,21 @@ export default function Education() {
                 )}
               </div>
 
-              <div style={{ paddingTop: '1rem', borderTop: '1px solid var(--color-border-light)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                  <span
-                    style={{
-                      background: '#f0fdf4',
-                      color: '#15803d',
-                      border: '1px solid #bbf7d0',
-                      borderRadius: '8px',
-                      padding: '0.2rem 0.6rem',
-                      fontSize: '0.75rem',
-                      fontWeight: '700',
-                      fontFamily: 'monospace',
-                    }}
-                  >
+              <div className="education-card__footer">
+                <div className="education-card__marks-wrap">
+                  <span className="education-marks-badge">
                     {item.grade}
                   </span>
                   {item.highlight && (
-                    <span style={{ fontSize: '0.72rem', color: 'var(--color-text-muted)' }}>
+                    <span className="education-highlight-text">
                       • {item.highlight}
                     </span>
                   )}
                 </div>
 
-                <span style={{ fontSize: '0.72rem', color: 'var(--color-text-muted)', display: 'inline-flex', alignItems: 'center', gap: '0.25rem' }}>
+                <span className="education-location-tag">
                   <MapPin size={12} />
-                  {item.location.split(',')[0]}
+                  <span>{item.location.split(',')[0]}</span>
                 </span>
               </div>
             </div>

@@ -23,10 +23,10 @@ export default function Services() {
         
         {/* Section Heading */}
         <div className="section-heading expertise__heading">
-          <span className="section-label">Services & Expertise</span>
-          <h2 className="section-title">What I Can Build</h2>
+          <span className="section-label">Engineering Capabilities</span>
+          <h2 className="section-title">Core Systems & Architecture</h2>
           <p className="section-description">
-            End-to-end software development capabilities tailored for production systems.
+            Full-lifecycle software development competencies—from distributed database design and real-time WebSocket APIs to reactive frontends.
           </p>
         </div>
 
