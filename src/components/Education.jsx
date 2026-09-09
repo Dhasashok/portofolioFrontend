@@ -69,7 +69,7 @@ export default function Education() {
                   </span>
                   {item.highlight && (
                     <span className="education-highlight-text">
-                      • {item.highlight}
+                      {item.highlight}
                     </span>
                   )}
                 </div>

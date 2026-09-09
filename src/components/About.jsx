@@ -102,28 +102,19 @@ export default function About() {
               </div>
             </div>
 
-            {/* Resume Action Buttons */}
-            <div style={{ display: 'flex', gap: '0.5rem', marginTop: '0.5rem', flexWrap: 'wrap' }}>
-              <a
-                href={personalInfo.resumeUrl}
-                download="Ashok_Rohidas_Dhas_Resume.pdf"
-                className="btn btn-primary about__resume"
-                style={{ flex: 1, minWidth: '150px' }}
-              >
-                <FileText size={16} />
-                <span>Download Resume</span>
-              </a>
-
+            {/* Resume Action Button */}
+            <div style={{ marginTop: '0.75rem' }}>
               <a
                 href={personalInfo.resumeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-secondary"
-                style={{ minHeight: '46px', padding: '0.75rem 1rem', display: 'inline-flex', alignItems: 'center', gap: '0.35rem' }}
+                className="btn btn-primary"
+                style={{ width: '100%', justifyContent: 'center', minHeight: '44px', borderRadius: '12px' }}
                 title="View Resume in new tab"
               >
-                <span>View PDF</span>
-                <ExternalLink size={14} />
+                <FileText size={16} />
+                <span>View Full Resume</span>
+                <ExternalLink size={14} className="opacity-80" />
               </a>
             </div>
           </div>
@@ -140,28 +131,32 @@ export default function About() {
               <p>{personalInfo.aboutBio[2]}</p>
             </div>
 
-            {/* Statistics / Learning Summary */}
+            {/* Key Metrics Grid (Clean Stats without arbitrary progress bars) */}
             <div className="about__learning card">
               <div className="about__learning-heading">
                 <div>
-                  <span className="about__small-label">Academic & Industry</span>
-                  <h3>Key Metrics</h3>
+                  <span className="about__small-label">Academic & Engineering</span>
+                  <h3>Key Highlights</h3>
                 </div>
                 <div className="about__learning-icon">
                   <Award size={18} />
                 </div>
               </div>
 
-              <div className="about__learning-list">
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: '0.75rem', marginTop: '0.25rem' }}>
                 {personalInfo.stats.map((st, sIdx) => (
-                  <div key={sIdx} className="about__learning-item">
-                    <div className="about__learning-meta">
-                      <span>{st.label} ({st.subtext})</span>
-                      <strong>{st.value}</strong>
-                    </div>
-                    <div className="about__progress">
-                      <span style={{ width: sIdx === 0 ? '85%' : sIdx === 1 ? '100%' : '90%' }} />
-                    </div>
+                  <div key={sIdx} style={{
+                    padding: '0.85rem 1rem',
+                    background: 'var(--color-surface-soft)',
+                    border: '1px solid var(--color-border-light)',
+                    borderRadius: '12px',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '0.2rem'
+                  }}>
+                    <strong style={{ fontSize: '1.3rem', color: 'var(--color-primary)', fontWeight: '700', lineHeight: 1.1 }}>{st.value}</strong>
+                    <span style={{ fontSize: '0.82rem', fontWeight: '600', color: 'var(--color-text)' }}>{st.label}</span>
+                    <span style={{ fontSize: '0.72rem', color: 'var(--color-text-muted)' }}>{st.subtext}</span>
                   </div>
                 ))}
               </div>

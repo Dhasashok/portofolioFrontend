@@ -58,29 +58,35 @@ export default function Navbar() {
   useEffect(() => {
     if (mobileMenuOpen) {
       document.body.style.overflow = 'hidden';
+      document.documentElement.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
     }
     return () => {
       document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
     };
   }, [mobileMenuOpen]);
 
   const handleNavClick = (e, href) => {
     e.preventDefault();
+    setMobileMenuOpen(false);
+
     const id = href.substring(1);
     const element = document.getElementById(id);
     if (element) {
-      const navOffset = 72;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - navOffset;
+      setTimeout(() => {
+        const navOffset = 70;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - navOffset;
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth',
-      });
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth',
+        });
+      }, 60);
     }
-    setMobileMenuOpen(false);
   };
 
   return (
@@ -141,37 +147,16 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Professional Fullscreen Mobile Drawer with Glassmorphism */}
+      {/* Mobile Backdrop Overlay */}
       <div 
         className={`navbar__mobile-backdrop ${mobileMenuOpen ? 'navbar__mobile-backdrop--open' : ''}`}
         onClick={() => setMobileMenuOpen(false)}
         aria-hidden="true"
       />
 
-      <div className={`navbar__mobile-drawer ${mobileMenuOpen ? 'navbar__mobile-drawer--open' : ''}`}>
-        <div className="navbar__mobile-drawer-inner">
-          
-          {/* Mobile Profile Header */}
-          <div className="navbar__mobile-header">
-            <div className="navbar__mobile-profile">
-              <div className="navbar__mobile-avatar">
-                <span>{personalInfo.initials}</span>
-              </div>
-              <div className="navbar__mobile-info">
-                <strong>{personalInfo.name}</strong>
-                <span>B.E. Comp Eng · 8.50 CGPA</span>
-              </div>
-            </div>
-            <button
-              onClick={() => setMobileMenuOpen(false)}
-              className="navbar__mobile-close-btn"
-              aria-label="Close menu"
-            >
-              <X size={18} />
-            </button>
-          </div>
-
-          {/* Mobile Nav Links */}
+      {/* Modern Attached Slide-Down Navigation Menu */}
+      <div className={`navbar__mobile-menu ${mobileMenuOpen ? 'navbar__mobile-menu--open' : ''}`}>
+        <div className="navbar__mobile-menu-inner">
           <nav className="navbar__mobile-nav-list" aria-label="Mobile Navigation">
             {navLinks.map((link) => {
               const IconComponent = NAV_ICONS[link.name] || ChevronRight;
@@ -185,20 +170,21 @@ export default function Navbar() {
                 >
                   <div className="navbar__mobile-nav-left">
                     <span className="navbar__mobile-nav-icon">
-                      <IconComponent size={18} />
+                      <IconComponent size={17} />
                     </span>
                     <span className="navbar__mobile-nav-label">{link.name}</span>
                   </div>
-                  <div className="navbar__mobile-nav-right">
-                    {isActive && <span className="navbar__mobile-active-badge">Active</span>}
-                    <ChevronRight size={16} className="navbar__mobile-nav-arrow" />
-                  </div>
+                  {isActive ? (
+                    <span className="navbar__mobile-active-pill">Active</span>
+                  ) : (
+                    <ChevronRight size={15} className="navbar__mobile-nav-arrow" />
+                  )}
                 </a>
               );
             })}
           </nav>
 
-          {/* Drawer Footer Actions */}
+          {/* Quick Resume CTA */}
           <div className="navbar__mobile-footer">
             <a
               href={personalInfo.resumeUrl}
@@ -207,41 +193,11 @@ export default function Navbar() {
               onClick={() => setMobileMenuOpen(false)}
               className="btn btn-primary navbar__mobile-resume-btn"
             >
-              <FileText size={16} />
-              <span>View Resume (PDF)</span>
-              <ArrowUpRight size={15} />
+              <FileText size={15} />
+              <span>Resume (PDF)</span>
+              <ArrowUpRight size={14} />
             </a>
-
-            <div className="navbar__mobile-social-bar">
-              <a 
-                href={personalInfo.linkedin} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="navbar__mobile-social-pill"
-                aria-label="LinkedIn"
-              >
-                <LinkedinIcon className="w-4 h-4" />
-                <span>LinkedIn</span>
-              </a>
-              <a 
-                href={`mailto:${personalInfo.email}`} 
-                className="navbar__mobile-social-pill"
-                aria-label="Email"
-              >
-                <Mail size={15} />
-                <span>Email</span>
-              </a>
-              <a 
-                href={`tel:${personalInfo.phoneRaw}`} 
-                className="navbar__mobile-social-pill"
-                aria-label="Phone"
-              >
-                <Phone size={15} />
-                <span>Call</span>
-              </a>
-            </div>
           </div>
-
         </div>
       </div>
     </header>
