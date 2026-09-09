@@ -8,7 +8,7 @@ A modern, high-performance developer portfolio built with **React 18**, **Vite**
 
 ## 🚀 Live Demo & Repository
 
-- **Live URL**: [Ashok Dhas Portfolio](https://dhasashok.github.io/portofolioFrontend/) *(or your deployed Vercel/Netlify link)*
+- **Live URL**: [Ashok Dhas Portfolio](https://dhasashok.github.io/portofolioFrontend/) https://portofolio-frontend-ten.vercel.app/
 - **GitHub Repository**: [https://github.com/Dhasashok/portofolioFrontend](https://github.com/Dhasashok/portofolioFrontend)
 
 ---
