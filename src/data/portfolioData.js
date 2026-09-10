@@ -8,7 +8,7 @@ export const personalInfo = {
   phone: "+91 90667 76566",
   phoneRaw: "+919066776566",
   linkedin: "https://www.linkedin.com/in/ashok-dhas-849664377/",
-  github: "", // Left empty as per instruction not to invent URLs
+  github: "https://github.com/Dhasashok",
   resumeUrl: "/Ashok_Rohidas_Dhas_Resume.pdf",
   availability: "Open for SDE & Full Stack Opportunities",
   college: "Genba Sopanrao Moze College of Engineering, Pune (GSMCOE)",
@@ -176,7 +176,9 @@ export const projectsData = [
       security: "JSON Web Tokens (JWT) for stateless sessions with granular role-based authorization.",
       testing: "Comprehensive API and interface verification using TestSprite."
     },
-    githubUrl: null,
+    githubUrl: "https://github.com/Dhasashok/pgmanagement-frontend",
+    githubFrontend: "https://github.com/Dhasashok/pgmanagement-frontend",
+    githubBackend: "https://github.com/Dhasashok/pgmanagement-backend",
     liveUrl: "https://pgmanagement-frontend.vercel.app/",
     image: "/projects/royal-orchid-preview.png",
     statBadge: "15 hrs/wk Saved · 40+ APIs · Deployed Live"
@@ -211,7 +213,7 @@ export const projectsData = [
       database: "MySQL relational database for patient records, appointments, and prescriptions.",
       communication: "Nodemailer for automated email notifications, token alerts, and OTP verification."
     },
-    githubUrl: null,
+    githubUrl: "https://github.com/Dhasashok/mediqueue",
     liveUrl: "https://frontend-phi-ruby-62.vercel.app/",
     image: "/projects/mediqueue-preview.png",
     statBadge: "3 Synchronized Roles · Real-Time WebSockets · Deployed Live"

@@ -8,7 +8,7 @@ import {
   Award,
   ExternalLink
 } from 'lucide-react';
-import { LinkedinIcon } from './Icons';
+import { LinkedinIcon, GithubIcon } from './Icons';
 import { personalInfo } from '../data/portfolioData';
 
 export default function About() {
@@ -100,6 +100,20 @@ export default function About() {
                   </a>
                 </div>
               </div>
+
+              {personalInfo.github && (
+                <div className="about__detail">
+                  <div className="about__detail-icon">
+                    <GithubIcon className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <span className="about__detail-label">GitHub</span>
+                    <a href={personalInfo.github} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'var(--color-primary)' }}>
+                      <strong>github.com/Dhasashok</strong>
+                    </a>
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Resume Action Button */}

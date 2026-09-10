@@ -9,7 +9,7 @@ import {
   Copy, 
   ArrowUpRight
 } from 'lucide-react';
-import { LinkedinIcon } from './Icons';
+import { LinkedinIcon, GithubIcon } from './Icons';
 import { personalInfo } from '../data/portfolioData';
 
 export default function Contact() {
@@ -271,6 +271,25 @@ export default function Contact() {
               </div>
               <ArrowUpRight size={16} className="contact__detail-arrow" />
             </a>
+
+            {/* GitHub Card */}
+            {personalInfo.github && (
+              <a
+                href={personalInfo.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="contact__social-card"
+              >
+                <div className="contact__social-brand contact__social-brand--github">
+                  <GithubIcon className="w-4 h-4" />
+                </div>
+                <div className="contact__detail-content">
+                  <small>GitHub</small>
+                  <strong>github.com/Dhasashok</strong>
+                </div>
+                <ArrowUpRight size={16} className="contact__detail-arrow" />
+              </a>
+            )}
           </div>
 
         </div>

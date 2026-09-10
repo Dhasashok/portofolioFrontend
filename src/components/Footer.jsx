@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowUp, Mail, Phone } from 'lucide-react';
-import { LinkedinIcon } from './Icons';
+import { LinkedinIcon, GithubIcon } from './Icons';
 import { personalInfo, navLinks } from '../data/portfolioData';
 
 export default function Footer() {
@@ -62,6 +62,19 @@ export default function Footer() {
 
           {/* Socials */}
           <div className="footer__socials">
+            {personalInfo.github && (
+              <a
+                href={personalInfo.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer__social"
+                aria-label="GitHub"
+                title="GitHub Profile"
+              >
+                <GithubIcon className="w-3.5 h-3.5" />
+              </a>
+            )}
+
             <a
               href={personalInfo.linkedin}
               target="_blank"

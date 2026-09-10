@@ -146,18 +146,44 @@ export default function Projects() {
                     </span>
 
                     <div className="project-case__links">
-                      {project.githubUrl && (
+                      {project.githubFrontend && project.githubBackend ? (
+                        <>
+                          <a
+                            href={project.githubFrontend}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="project-case__btn"
+                            aria-label={`${project.title} Frontend Repository`}
+                            title="Frontend (Client) Repository"
+                          >
+                            <GithubIcon className="w-3.5 h-3.5" />
+                            <span>Frontend</span>
+                          </a>
+                          <a
+                            href={project.githubBackend}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="project-case__btn"
+                            aria-label={`${project.title} Backend Repository`}
+                            title="Backend (API Server) Repository"
+                          >
+                            <GithubIcon className="w-3.5 h-3.5" />
+                            <span>Backend</span>
+                          </a>
+                        </>
+                      ) : project.githubUrl ? (
                         <a
                           href={project.githubUrl}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="project-case__btn"
-                          aria-label="GitHub Repository"
+                          aria-label={`${project.title} GitHub Repository`}
+                          title="GitHub Repository"
                         >
                           <GithubIcon className="w-3.5 h-3.5" />
                           <span>Code</span>
                         </a>
-                      )}
+                      ) : null}
 
                       {project.liveUrl ? (
                         <a

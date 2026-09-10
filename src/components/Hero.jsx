@@ -6,7 +6,7 @@ import {
   Phone, 
   ArrowUpRight 
 } from 'lucide-react';
-import { LinkedinIcon } from './Icons';
+import { LinkedinIcon, GithubIcon } from './Icons';
 import { personalInfo } from '../data/portfolioData';
 
 const ROLES = [
@@ -147,6 +147,19 @@ export default function Hero() {
 
           {/* Social Links Row */}
           <div className="hero-centered__socials">
+            {personalInfo.github && (
+              <a
+                href={personalInfo.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hero-centered__social-link"
+                aria-label="GitHub"
+                title="GitHub Profile"
+              >
+                <GithubIcon className="w-4 h-4" />
+              </a>
+            )}
+
             <a
               href={personalInfo.linkedin}
               target="_blank"
