@@ -59,8 +59,7 @@ export default function Hero() {
 
   return (
     <section id="home" className="hero-centered">
-      {/* Ambient Aurora Glows & Subtle Tech Grid */}
-      <div className="hero-centered__bg-grid" />
+      {/* Ambient Aurora Glows */}
       <div className="hero-centered__glow hero-centered__glow--primary" />
       <div className="hero-centered__glow hero-centered__glow--secondary" />
 

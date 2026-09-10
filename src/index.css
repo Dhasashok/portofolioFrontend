@@ -1267,19 +1267,6 @@ html.dark .btn--copied {
               radial-gradient(circle at 85% 75%, rgba(6, 182, 212, 0.05) 0%, transparent 45%);
 }
 
-/* Subtle Geometric Tech Grid Background */
-.hero-centered__bg-grid {
-  position: absolute;
-  inset: 0;
-  background-image: 
-    linear-gradient(to right, rgba(124, 58, 237, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(124, 58, 237, 0.04) 1px, transparent 1px);
-  background-size: 44px 44px;
-  mask-image: radial-gradient(ellipse 85% 65% at 50% 40%, #000 70%, transparent 100%);
-  -webkit-mask-image: radial-gradient(ellipse 85% 65% at 50% 40%, #000 70%, transparent 100%);
-  pointer-events: none;
-  z-index: 0;
-}
 
 /* Ambient Aurora Glows */
 .hero-centered__glow {
