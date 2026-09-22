@@ -28,18 +28,18 @@ export default function About() {
         {/* 2-Column Grid */}
         <div className="about__grid" style={{ marginTop: '2.5rem' }}>
           
-          {/* Left Profile Card */}
+          {/* Left Highlights & Background Card */}
           <div className="about__profile-card card">
             <div className="about__profile-top">
               <div className="about__avatar">
-                <span>{personalInfo.initials}</span>
+                <Award size={28} style={{ color: 'var(--color-primary)' }} />
               </div>
               <div className="about__identity">
-                <h3 style={{ wordBreak: 'keep-all', whiteSpace: 'normal' }}>{personalInfo.name}</h3>
-                <p>{personalInfo.title}</p>
-                <div className="about__status">
+                <span className="section-label" style={{ marginBottom: '0.2rem' }}>Candidate Overview</span>
+                <h3 style={{ fontSize: '1.2rem', fontWeight: '700' }}>Full Stack Engineer</h3>
+                <div className="about__status" style={{ marginTop: '0.4rem' }}>
                   <span className="about__status-dot" />
-                  <span>Available for Hire</span>
+                  <span>Open to Opportunities</span>
                 </div>
               </div>
             </div>
@@ -50,7 +50,7 @@ export default function About() {
                   <GraduationCap size={16} />
                 </div>
                 <div>
-                  <span className="about__detail-label">Education</span>
+                  <span className="about__detail-label">Degree & Institution</span>
                   <strong>{personalInfo.degree} (SPPU)</strong>
                 </div>
               </div>
@@ -60,76 +60,44 @@ export default function About() {
                   <MapPin size={16} />
                 </div>
                 <div>
-                  <span className="about__detail-label">Location</span>
-                  <strong>{personalInfo.location}</strong>
+                  <span className="about__detail-label">Base Location</span>
+                  <strong>{personalInfo.location} · Open to Remote</strong>
                 </div>
               </div>
 
               <div className="about__detail">
                 <div className="about__detail-icon">
-                  <Mail size={16} />
+                  <Award size={16} />
                 </div>
                 <div>
-                  <span className="about__detail-label">Email</span>
-                  <a href={`mailto:${personalInfo.email}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-                    <strong>{personalInfo.email}</strong>
-                  </a>
+                  <span className="about__detail-label">Core Specialization</span>
+                  <strong>React, Node.js, Express & SQL</strong>
                 </div>
               </div>
-
-              <div className="about__detail">
-                <div className="about__detail-icon">
-                  <Phone size={16} />
-                </div>
-                <div>
-                  <span className="about__detail-label">Phone</span>
-                  <a href={`tel:${personalInfo.phoneRaw}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-                    <strong>{personalInfo.phone}</strong>
-                  </a>
-                </div>
-              </div>
-
-              <div className="about__detail">
-                <div className="about__detail-icon">
-                  <LinkedinIcon className="w-4 h-4" />
-                </div>
-                <div>
-                  <span className="about__detail-label">LinkedIn</span>
-                  <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'var(--color-primary)' }}>
-                    <strong>linkedin.com/in/ashok-dhas</strong>
-                  </a>
-                </div>
-              </div>
-
-              {personalInfo.github && (
-                <div className="about__detail">
-                  <div className="about__detail-icon">
-                    <GithubIcon className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <span className="about__detail-label">GitHub</span>
-                    <a href={personalInfo.github} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'var(--color-primary)' }}>
-                      <strong>github.com/Dhasashok</strong>
-                    </a>
-                  </div>
-                </div>
-              )}
             </div>
 
-            {/* Resume Action Button */}
-            <div style={{ marginTop: 'auto', paddingTop: '1rem' }}>
+            {/* Quick Actions */}
+            <div style={{ marginTop: 'auto', paddingTop: '1.25rem', display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
+              <a
+                href="#contact"
+                className="btn btn-primary"
+                style={{ width: '100%', justifyContent: 'center', minHeight: '42px' }}
+              >
+                <span>Initiate Contact</span>
+                <ArrowUpRight size={15} aria-hidden="true" />
+              </a>
+
               <a
                 href={personalInfo.resumeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-secondary"
-                style={{ width: '100%', justifyContent: 'center', minHeight: '44px' }}
+                style={{ width: '100%', justifyContent: 'center', minHeight: '42px' }}
                 title="Open Resume in new tab"
                 aria-label="Open Resume in new tab"
               >
                 <FileText size={15} aria-hidden="true" />
-                <span>Resume</span>
-                <ArrowUpRight size={14} className="opacity-80" aria-hidden="true" />
+                <span>View Full Resume</span>
               </a>
             </div>
           </div>

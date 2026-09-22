@@ -41,9 +41,10 @@ export default function Projects() {
                       </div>
                       <span 
                         className="mockup-window__url" 
-                        title={isRoyal ? 'pgmanagement-frontend.vercel.app' : 'frontend-phi-ruby-62.vercel.app'}
+                        title={project.liveUrl || 'https://portofolio-frontend-ten.vercel.app'}
+                        aria-label={`Live Demo URL: ${isRoyal ? 'pgmanagement.app' : 'mediqueue.app'}`}
                       >
-                        {isRoyal ? 'pgmanagement.vercel.app' : 'mediqueue.vercel.app'}
+                        {isRoyal ? 'pgmanagement.app' : 'mediqueue.app'}
                       </span>
                       <span className="mockup-window__status">
                         <span className="status-indicator-dot" />
@@ -134,47 +135,54 @@ export default function Projects() {
                         <li key={fIdx}>{feature}</li>
                       ))}
                     </ul>
+                    {project.githubBackend && (
+                      <p style={{ marginTop: '0.65rem', fontSize: 'var(--text-xs)', color: 'var(--color-text-secondary)' }}>
+                        Backend Architecture:{' '}
+                        <a 
+                          href={project.githubBackend} 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          style={{ color: 'var(--color-primary)', textDecoration: 'underline', fontWeight: 600 }}
+                        >
+                          View Backend API Repository ↗
+                        </a>
+                      </p>
+                    )}
                   </details>
 
+                  {/* Scannable Tech Stack Pills */}
                   <div className="project-case__pills">
-                    {project.technologies.map((tech, tIdx) => (
+                    {project.technologies.slice(0, 5).map((tech, tIdx) => (
                       <span key={tIdx} className="tech-pill">
                         {tech}
                       </span>
                     ))}
+                    {project.technologies.length > 5 && (
+                      <span className="tech-pill" style={{ opacity: 0.85, fontStyle: 'italic' }}>
+                        +{project.technologies.length - 5} more
+                      </span>
+                    )}
                   </div>
 
+                  {/* Standardized 2-Action Bottom Bar */}
                   <div className="project-case__bottom">
                     <span className="project-case__stat-badge">
                       {project.statBadge}
                     </span>
 
                     <div className="project-case__links">
-                      {project.githubFrontend && project.githubBackend ? (
-                        <>
-                          <a
-                            href={project.githubFrontend}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="project-case__btn"
-                            aria-label={`${project.title} Frontend Source Code`}
-                            title="View Frontend Code"
-                          >
-                            <GithubIcon className="w-3.5 h-3.5" />
-                            <span>View Code (Frontend)</span>
-                          </a>
-                          <a
-                            href={project.githubBackend}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="project-case__btn"
-                            aria-label={`${project.title} Backend Source Code`}
-                            title="View Backend Code"
-                          >
-                            <GithubIcon className="w-3.5 h-3.5" />
-                            <span>View Code (Backend)</span>
-                          </a>
-                        </>
+                      {project.githubFrontend ? (
+                        <a
+                          href={project.githubFrontend}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="project-case__btn"
+                          aria-label={`${project.title} Source Code`}
+                          title="View Frontend Repository"
+                        >
+                          <GithubIcon className="w-3.5 h-3.5" />
+                          <span>Source Code</span>
+                        </a>
                       ) : project.githubUrl ? (
                         <a
                           href={project.githubUrl}
@@ -185,7 +193,7 @@ export default function Projects() {
                           title="View Source Code"
                         >
                           <GithubIcon className="w-3.5 h-3.5" />
-                          <span>View Code</span>
+                          <span>Source Code</span>
                         </a>
                       ) : null}
 
