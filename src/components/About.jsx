@@ -35,7 +35,7 @@ export default function About() {
                 <span>{personalInfo.initials}</span>
               </div>
               <div className="about__identity">
-                <h3>{personalInfo.name}</h3>
+                <h3 style={{ wordBreak: 'keep-all', whiteSpace: 'normal' }}>{personalInfo.name}</h3>
                 <p>{personalInfo.title}</p>
                 <div className="about__status">
                   <span className="about__status-dot" />

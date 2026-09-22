@@ -17,13 +17,13 @@ export default function Certifications() {
         </div>
 
         {/* Certifications Grid */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.25rem', marginTop: '2.5rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem', marginTop: '1.5rem' }}>
           {certificationsData.map((cert) => (
             <div
               key={cert.id}
               className="card"
               style={{
-                padding: '1.5rem',
+                padding: '1.15rem 1.25rem',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
@@ -44,7 +44,7 @@ export default function Certifications() {
                   >
                     <Award size={20} />
                   </div>
-                  <span className="tech-pill" style={{ fontSize: '0.68rem', fontFamily: 'monospace' }}>
+                  <span className="tech-pill" style={{ fontSize: 'var(--text-xs)', fontFamily: 'monospace' }}>
                     {cert.badge}
                   </span>
                 </div>
@@ -58,7 +58,7 @@ export default function Certifications() {
 
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', marginBottom: '1.25rem' }}>
                   {cert.skills.map((skill, sIdx) => (
-                    <span key={sIdx} className="tech-pill" style={{ fontSize: '0.68rem' }}>
+                    <span key={sIdx} className="tech-pill" style={{ fontSize: 'var(--text-xs)' }}>
                       {skill}
                     </span>
                   ))}

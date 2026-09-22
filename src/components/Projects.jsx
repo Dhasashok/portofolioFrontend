@@ -39,8 +39,11 @@ export default function Projects() {
                         <span className="mockup-dot mockup-dot--yellow" />
                         <span className="mockup-dot mockup-dot--green" />
                       </div>
-                      <span className="mockup-window__url">
-                        {isRoyal ? 'pgmanagement-frontend.vercel.app' : 'frontend-phi-ruby-62.vercel.app'}
+                      <span 
+                        className="mockup-window__url" 
+                        title={isRoyal ? 'pgmanagement-frontend.vercel.app' : 'frontend-phi-ruby-62.vercel.app'}
+                      >
+                        {isRoyal ? 'pgmanagement.vercel.app' : 'mediqueue.vercel.app'}
                       </span>
                       <span className="mockup-window__status">
                         <span className="status-indicator-dot" />
@@ -81,26 +84,26 @@ export default function Projects() {
                           </div>
                           <div className="mockup-stat-chip">
                             <strong>15 hrs</strong>
-                            <span>Saved/wk</span>
+                            <span>Saved/Wk</span>
                           </div>
                           <div className="mockup-stat-chip">
-                            <strong>JWT</strong>
-                            <span>RBAC Sec</span>
+                            <strong>100%</strong>
+                            <span>Automated</span>
                           </div>
                         </>
                       ) : (
                         <>
                           <div className="mockup-stat-chip">
-                            <strong>3 Roles</strong>
-                            <span>Dashboards</span>
+                            <strong>500+</strong>
+                            <span>Daily OPD</span>
                           </div>
                           <div className="mockup-stat-chip">
-                            <strong>Instant</strong>
-                            <span>Token Sync</span>
+                            <strong>Real-Time</strong>
+                            <span>Sync</span>
                           </div>
                           <div className="mockup-stat-chip">
-                            <strong>MySQL 8</strong>
-                            <span>Relational</span>
+                            <strong>60%</strong>
+                            <span>Wait Reduction</span>
                           </div>
                         </>
                       )}
@@ -121,16 +124,17 @@ export default function Projects() {
 
                   <p className="project-case__desc">{project.description}</p>
 
-                  <div className="project-case__features">
-                    <span className="project-case__features-title">
-                      Key Capabilities & Engineering Deliverables
-                    </span>
-                    <ul>
+                  <details className="project-case__features">
+                    <summary className="project-case__features-title" style={{ cursor: 'pointer', listStyle: 'none' }}>
+                      <span>Key Capabilities & Deliverables ({project.features.length})</span>
+                      <span className="project-case__expand-indicator">▼</span>
+                    </summary>
+                    <ul style={{ marginTop: '0.75rem' }}>
                       {project.features.map((feature, fIdx) => (
                         <li key={fIdx}>{feature}</li>
                       ))}
                     </ul>
-                  </div>
+                  </details>
 
                   <div className="project-case__pills">
                     {project.technologies.map((tech, tIdx) => (

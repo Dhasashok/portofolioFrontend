@@ -107,18 +107,23 @@ export default function Contact() {
             )}
 
             {/* Form */}
-            <form onSubmit={handleSubmit} style={{ width: '100%', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '0.75rem' }}>
-                <div>
+            <form onSubmit={handleSubmit} style={{ width: '100%', display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '0.85rem' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.35rem' }}>
+                  <label htmlFor="contact-name" style={{ fontSize: 'var(--text-xs)', fontWeight: '600', color: 'var(--color-text)' }}>
+                    Your Name <span style={{ color: 'var(--color-primary)' }}>*</span>
+                  </label>
                   <input
+                    id="contact-name"
                     type="text"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    placeholder="Your Name *"
+                    placeholder="e.g., Alex Smith"
+                    aria-required="true"
                     style={{
                       width: '100%',
                       padding: '0.65rem 0.85rem',
-                      borderRadius: '0.65rem',
+                      borderRadius: 'var(--radius-md)',
                       border: errors.name ? '1px solid #ef4444' : '1px solid var(--color-border)',
                       background: 'var(--color-surface-soft)',
                       color: 'var(--color-text)',
@@ -128,16 +133,21 @@ export default function Contact() {
                   {errors.name && <span style={{ color: '#ef4444', fontSize: '0.65rem' }}>{errors.name}</span>}
                 </div>
 
-                <div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.35rem' }}>
+                  <label htmlFor="contact-email" style={{ fontSize: 'var(--text-xs)', fontWeight: '600', color: 'var(--color-text)' }}>
+                    Your Email <span style={{ color: 'var(--color-primary)' }}>*</span>
+                  </label>
                   <input
+                    id="contact-email"
                     type="email"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    placeholder="Your Email *"
+                    placeholder="e.g., alex@example.com"
+                    aria-required="true"
                     style={{
                       width: '100%',
                       padding: '0.65rem 0.85rem',
-                      borderRadius: '0.65rem',
+                      borderRadius: 'var(--radius-md)',
                       border: errors.email ? '1px solid #ef4444' : '1px solid var(--color-border)',
                       background: 'var(--color-surface-soft)',
                       color: 'var(--color-text)',
@@ -148,16 +158,21 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.35rem' }}>
+                <label htmlFor="contact-subject" style={{ fontSize: 'var(--text-xs)', fontWeight: '600', color: 'var(--color-text)' }}>
+                  Subject / Opportunity <span style={{ color: 'var(--color-primary)' }}>*</span>
+                </label>
                 <input
+                  id="contact-subject"
                   type="text"
                   value={formData.subject}
                   onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                  placeholder="Subject / Opportunity *"
+                  placeholder="e.g., Software Developer Opportunity"
+                  aria-required="true"
                   style={{
                     width: '100%',
                     padding: '0.65rem 0.85rem',
-                    borderRadius: '0.65rem',
+                    borderRadius: 'var(--radius-md)',
                     border: errors.subject ? '1px solid #ef4444' : '1px solid var(--color-border)',
                     background: 'var(--color-surface-soft)',
                     color: 'var(--color-text)',
@@ -167,16 +182,21 @@ export default function Contact() {
                 {errors.subject && <span style={{ color: '#ef4444', fontSize: '0.65rem' }}>{errors.subject}</span>}
               </div>
 
-              <div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.35rem' }}>
+                <label htmlFor="contact-message" style={{ fontSize: 'var(--text-xs)', fontWeight: '600', color: 'var(--color-text)' }}>
+                  Message <span style={{ color: 'var(--color-primary)' }}>*</span>
+                </label>
                 <textarea
+                  id="contact-message"
                   rows="3"
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  placeholder="Your message..."
+                  placeholder="Write your message here..."
+                  aria-required="true"
                   style={{
                     width: '100%',
                     padding: '0.65rem 0.85rem',
-                    borderRadius: '0.65rem',
+                    borderRadius: 'var(--radius-md)',
                     border: errors.message ? '1px solid #ef4444' : '1px solid var(--color-border)',
                     background: 'var(--color-surface-soft)',
                     color: 'var(--color-text)',

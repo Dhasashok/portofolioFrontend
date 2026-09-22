@@ -23,7 +23,7 @@ export default function Education() {
               key={item.id}
               className="card"
               style={{
-                padding: '1.5rem',
+                padding: '1.15rem 1.25rem',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
@@ -44,7 +44,7 @@ export default function Education() {
                   >
                     <GraduationCap size={20} />
                   </div>
-                  <span className="tech-pill" style={{ fontFamily: 'monospace', fontSize: '0.72rem' }}>
+                  <span className="tech-pill" style={{ fontFamily: 'monospace', fontSize: 'var(--text-xs)' }}>
                     {item.period}
                   </span>
                 </div>

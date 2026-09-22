@@ -2111,10 +2111,183 @@ html, body, #root, .app {
   }
 }
 
+/* ==========================================================================
+   Usability Heuristic Enhancements & Fixes
+   ========================================================================== */
 
+/* 1. Unified Typographic Scale Minimum Floor (>= 12px / 0.75rem) */
+.footer__brand small,
+.footer__social-text,
+.footer__bottom p,
+.footer__back-top,
+.mockup-stat-chip span,
+.experience__note,
+.about__detail-label,
+.contact__detail-content small,
+.about__status,
+.about__small-label,
+.expertise-card__number,
+.expertise-card .tech-pill,
+.experience-card__type,
+.experience-card__current,
+.experience-card__meta span,
+.experience-card__responsibilities li,
+.project-card__category,
+.project-card__image-overlay span,
+.project-card__features li,
+.project-card__technologies .tech-pill,
+.project-card__link,
+.project-card__github,
+.skill-card__index,
+.skill-card__skill,
+.contact__label,
+.contact__social-brand,
+.contact__detail-content strong,
+.contact__social-card strong,
+.education-highlight-text,
+.education-location-tag,
+.project-case__index,
+.project-case__category {
+  font-size: var(--text-2xs, 0.75rem) !important;
+}
 
+/* 2. Section Labels: Lowercase/Title Case & Enhanced Readability */
+.section-label {
+  text-transform: none !important;
+  font-size: var(--text-xs, 0.8125rem) !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.04em !important;
+}
 
+/* 3. Experience Cards Sequence Layout */
+.experience__cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
 
+.experience-card__marker {
+  display: none !important;
+}
 
+.experience__timeline:before {
+  display: none !important;
+}
 
+/* 4. Education & Certifications Vertical Rhythm */
+#education.section,
+#certifications.section {
+  padding-block: var(--space-12, 3rem) !important;
+}
 
+.education-highlight-text,
+.education-location-tag {
+  font-size: var(--text-xs, 0.8125rem) !important;
+  font-weight: 600;
+}
+
+/* 5. About Bio Text Constraints & Mobile Layout */
+.about__bio h3 {
+  max-width: 100% !important;
+}
+
+@media (max-width: 900px) {
+  .about__grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* 6. Project Features Collapsible Accordion (<details>/<summary>) */
+.project-case__features {
+  border-top: 1px solid var(--color-border-light);
+  border-bottom: 1px solid var(--color-border-light);
+  padding: 0.75rem 0;
+  margin: 1rem 0;
+  transition: all var(--transition-fast);
+}
+
+.project-case__features summary,
+.project-case__features-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  font-size: var(--text-xs, 0.8125rem);
+  font-weight: 600;
+  color: var(--color-primary);
+  user-select: none;
+  list-style: none;
+}
+
+.project-case__features summary::-webkit-details-marker,
+.project-case__features-title::-webkit-details-marker {
+  display: none;
+}
+
+.project-case__expand-indicator {
+  font-size: 0.7rem;
+  transition: transform var(--transition-fast);
+  color: var(--color-text-secondary);
+}
+
+details[open] .project-case__expand-indicator {
+  transform: rotate(180deg);
+}
+
+.project-case__features ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.45rem 1rem;
+  margin-top: 0.75rem;
+  padding: 0;
+  list-style: none;
+}
+
+.project-case__features li {
+  color: var(--color-text-secondary);
+  padding-left: 1rem;
+  font-size: var(--text-xs, 0.8125rem);
+  position: relative;
+  line-height: 1.6;
+}
+
+.project-case__features li:before {
+  content: "";
+  background: var(--color-primary);
+  border-radius: 50%;
+  width: 4px;
+  height: 4px;
+  position: absolute;
+  top: 0.55rem;
+  left: 0;
+}
+
+@media (max-width: 480px) {
+  .project-case__features ul {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 7. Footer Navigation Even Wrapping */
+.footer__nav {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 0.5rem 1.25rem !important;
+}
+
+.footer__nav a {
+  white-space: nowrap !important;
+  font-size: var(--text-xs, 0.8125rem) !important;
+}
+
+/* 8. Contact Form Accessible Labels */
+.contact-form__label {
+  display: block;
+  font-size: var(--text-xs, 0.8125rem);
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 0.4rem;
+  text-align: left;
+}

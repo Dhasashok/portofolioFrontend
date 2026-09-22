@@ -54,13 +54,10 @@ export default function Experience() {
             </div>
           </div>
 
-          {/* Chronological Timeline */}
-          <div className="experience__timeline">
+          {/* Verified Career Experience Cards */}
+          <div className="experience__cards">
             {experienceData.map((item) => (
-              <div key={item.id} className="experience-card card" style={{ marginBottom: '1.5rem' }}>
-                <span className="experience-card__marker" aria-hidden="true">
-                  <span />
-                </span>
+              <div key={item.id} className="experience-card card">
 
                 <div className="experience-card__header">
                   <div>
