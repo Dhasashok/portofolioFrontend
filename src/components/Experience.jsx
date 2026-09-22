@@ -16,47 +16,49 @@ export default function Experience() {
           </p>
         </div>
 
-        {/* 2-Column Experience Layout */}
-        <div className="experience__layout" style={{ marginTop: '2.5rem' }}>
+        {/* Unified Single-Column Flow */}
+        <div className="experience__flow">
           
-          {/* Left Sticky Intro Card */}
-          <div className="experience__intro card">
-            <div className="experience__intro-icon">
-              <Briefcase size={22} aria-hidden="true" />
-            </div>
-            <span className="experience__intro-label">Career Path</span>
-            <h3>Practical Industry Exposure</h3>
-            <p>
-              Hands-on engineering across production web workflows, component architecture, responsive design, and full-stack REST API integrations.
-            </p>
-
-            {/* Career Metrics & Competencies */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '0.75rem', margin: '1.25rem 0' }}>
-              <div style={{ padding: '0.75rem 0.85rem', background: 'var(--color-surface-soft)', borderRadius: 'var(--radius-md)', border: '1px solid var(--color-border-light)' }}>
-                <strong style={{ display: 'block', fontSize: '1.25rem', color: 'var(--color-primary)', fontWeight: '700' }}>2</strong>
-                <span style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-text-secondary)', fontWeight: '500' }}>Verified Internships</span>
+          {/* Full-Width Balanced Summary Card */}
+          <div className="experience__intro-banner card">
+            <div className="experience__intro-banner-main">
+              <div className="experience__intro-icon">
+                <Briefcase size={22} aria-hidden="true" />
               </div>
-              <div style={{ padding: '0.75rem 0.85rem', background: 'var(--color-surface-soft)', borderRadius: 'var(--radius-md)', border: '1px solid var(--color-border-light)' }}>
-                <strong style={{ display: 'block', fontSize: '1.25rem', color: 'var(--color-primary)', fontWeight: '700' }}>100%</strong>
-                <span style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-text-secondary)', fontWeight: '500' }}>Task Delivery</span>
+              <div>
+                <span className="experience__intro-label">Career Path</span>
+                <h3>Practical Industry Exposure</h3>
+                <p>
+                  Hands-on engineering across production web workflows, component architecture, responsive design, and full-stack REST API integrations.
+                </p>
               </div>
             </div>
 
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', marginBottom: '0.75rem' }}>
-              <span className="tech-pill">Frontend Modules</span>
-              <span className="tech-pill">API Integration</span>
-              <span className="tech-pill">Agile Sprints</span>
-            </div>
+            <div className="experience__intro-banner-meta">
+              <div className="experience__intro-stats">
+                <div className="experience__stat-box">
+                  <strong>2</strong>
+                  <span>Verified Internships</span>
+                </div>
+                <div className="experience__stat-box">
+                  <strong>100%</strong>
+                  <span>Task Delivery</span>
+                </div>
+              </div>
 
-            <div className="experience__line" />
-            <span className="experience__note">Verified Software Engineering Internships</span>
+              <div className="experience__pills">
+                <span className="tech-pill">Frontend Modules</span>
+                <span className="tech-pill">API Integration</span>
+                <span className="tech-pill">Agile Sprints</span>
+              </div>
+            </div>
           </div>
 
-          {/* Right Timeline List */}
+          {/* Chronological Timeline */}
           <div className="experience__timeline">
             {experienceData.map((item) => (
               <div key={item.id} className="experience-card card" style={{ marginBottom: '1.5rem' }}>
-                <span className="experience-card__marker">
+                <span className="experience-card__marker" aria-hidden="true">
                   <span />
                 </span>
 
@@ -71,11 +73,11 @@ export default function Experience() {
 
                 <div className="experience-card__meta">
                   <span>
-                    <Calendar size={13} />
+                    <Calendar size={13} aria-hidden="true" />
                     {item.period}
                   </span>
                   <span>
-                    <MapPin size={13} />
+                    <MapPin size={13} aria-hidden="true" />
                     {item.location}
                   </span>
                 </div>
