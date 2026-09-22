@@ -122,12 +122,13 @@ export default function About() {
                 href={personalInfo.resumeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-primary"
-                style={{ width: '100%', justifyContent: 'center', minHeight: '44px', borderRadius: '12px' }}
-                title="View Resume in new tab"
+                className="btn btn-secondary"
+                style={{ width: '100%', justifyContent: 'center', minHeight: '44px' }}
+                title="Open Resume in new tab"
+                aria-label="Open Resume in new tab"
               >
                 <FileText size={16} />
-                <span>View Full Resume</span>
+                <span>Resume</span>
                 <ExternalLink size={14} className="opacity-80" />
               </a>
             </div>

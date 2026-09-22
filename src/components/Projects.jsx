@@ -153,22 +153,22 @@ export default function Projects() {
                             target="_blank"
                             rel="noopener noreferrer"
                             className="project-case__btn"
-                            aria-label={`${project.title} Frontend Repository`}
+                            aria-label={`${project.title} Frontend Source Code Repository`}
                             title="Frontend (Client) Repository"
                           >
                             <GithubIcon className="w-3.5 h-3.5" />
-                            <span>Frontend</span>
+                            <span>Frontend Code</span>
                           </a>
                           <a
                             href={project.githubBackend}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="project-case__btn"
-                            aria-label={`${project.title} Backend Repository`}
+                            aria-label={`${project.title} Backend Source Code Repository`}
                             title="Backend (API Server) Repository"
                           >
                             <GithubIcon className="w-3.5 h-3.5" />
-                            <span>Backend</span>
+                            <span>Backend Code</span>
                           </a>
                         </>
                       ) : project.githubUrl ? (
@@ -177,11 +177,11 @@ export default function Projects() {
                           target="_blank"
                           rel="noopener noreferrer"
                           className="project-case__btn"
-                          aria-label={`${project.title} GitHub Repository`}
-                          title="GitHub Repository"
+                          aria-label={`${project.title} Source Code Repository`}
+                          title="Source Code Repository"
                         >
                           <GithubIcon className="w-3.5 h-3.5" />
-                          <span>Code</span>
+                          <span>Source Code</span>
                         </a>
                       ) : null}
 

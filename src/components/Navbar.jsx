@@ -113,6 +113,7 @@ export default function Navbar() {
               href={link.href}
               onClick={(e) => handleNavClick(e, link.href)}
               className={`navbar__link ${activeSection === link.href.substring(1) ? 'navbar__link--active' : ''}`}
+              aria-current={activeSection === link.href.substring(1) ? 'page' : undefined}
             >
               {link.name}
             </a>
@@ -126,9 +127,10 @@ export default function Navbar() {
             href={personalInfo.resumeUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn btn-primary navbar__resume-btn"
+            className="btn btn-secondary navbar__resume-btn"
             style={{ minHeight: '38px', padding: '0.45rem 1rem', fontSize: 'var(--text-xs)' }}
             title="Open Resume in new tab"
+            aria-label="Open Resume in new tab"
           >
             <FileText size={14} />
             <span>Resume</span>
@@ -167,6 +169,7 @@ export default function Navbar() {
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
                   className={`navbar__mobile-nav-item ${isActive ? 'navbar__mobile-nav-item--active' : ''}`}
+                  aria-current={isActive ? 'page' : undefined}
                 >
                   <div className="navbar__mobile-nav-left">
                     <span className="navbar__mobile-nav-icon">

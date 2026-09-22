@@ -17,7 +17,7 @@ export default function Education() {
         </div>
 
         {/* Education Cards Grid */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.25rem', marginTop: '2.5rem' }}>
+        <div className="education__grid">
           {educationData.map((item) => (
             <div
               key={item.id}

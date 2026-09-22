@@ -201,57 +201,65 @@ export default function Contact() {
           {/* Right Details List matching reference .contact__details */}
           <div className="contact__details">
             {/* Email Card */}
-            <a
-              href={`mailto:${personalInfo.email}`}
-              className="contact__detail"
-            >
-              <div className="contact__detail-icon">
-                <Mail size={16} />
-              </div>
-              <div className="contact__detail-content">
-                <small>Email</small>
-                <strong>{personalInfo.email}</strong>
-              </div>
-              <button
-                onClick={handleCopyEmail}
-                style={{ background: 'transparent', border: 'none', padding: '0.35rem', cursor: 'pointer' }}
-                title="Copy Email"
-                aria-label="Copy Email"
+            <div className="contact__detail">
+              <a
+                href={`mailto:${personalInfo.email}`}
+                className="contact__detail-link"
               >
-                {copiedEmail ? <Check size={14} color="#10b981" /> : <Copy size={14} />}
+                <div className="contact__detail-icon">
+                  <Mail size={16} />
+                </div>
+                <div className="contact__detail-content">
+                  <small>Email</small>
+                  <strong>{personalInfo.email}</strong>
+                </div>
+              </a>
+              <button
+                type="button"
+                onClick={handleCopyEmail}
+                className="contact__copy-btn"
+                title="Copy Email"
+                aria-label={copiedEmail ? "Email copied to clipboard" : "Copy Email"}
+              >
+                {copiedEmail ? <Check size={16} color="#10b981" /> : <Copy size={16} />}
               </button>
-            </a>
+            </div>
 
             {/* Phone Card */}
-            <a
-              href={`tel:${personalInfo.phoneRaw}`}
-              className="contact__detail"
-            >
-              <div className="contact__detail-icon">
-                <Phone size={16} />
-              </div>
-              <div className="contact__detail-content">
-                <small>Phone</small>
-                <strong>{personalInfo.phone}</strong>
-              </div>
-              <button
-                onClick={handleCopyPhone}
-                style={{ background: 'transparent', border: 'none', padding: '0.35rem', cursor: 'pointer' }}
-                title="Copy Phone"
-                aria-label="Copy Phone"
+            <div className="contact__detail">
+              <a
+                href={`tel:${personalInfo.phoneRaw}`}
+                className="contact__detail-link"
               >
-                {copiedPhone ? <Check size={14} color="#10b981" /> : <Copy size={14} />}
+                <div className="contact__detail-icon">
+                  <Phone size={16} />
+                </div>
+                <div className="contact__detail-content">
+                  <small>Phone</small>
+                  <strong>{personalInfo.phone}</strong>
+                </div>
+              </a>
+              <button
+                type="button"
+                onClick={handleCopyPhone}
+                className="contact__copy-btn"
+                title="Copy Phone"
+                aria-label={copiedPhone ? "Phone copied to clipboard" : "Copy Phone"}
+              >
+                {copiedPhone ? <Check size={16} color="#10b981" /> : <Copy size={16} />}
               </button>
-            </a>
+            </div>
 
             {/* Location Card */}
             <div className="contact__detail" style={{ cursor: 'default' }}>
-              <div className="contact__detail-icon">
-                <MapPin size={16} />
-              </div>
-              <div className="contact__detail-content">
-                <small>Location</small>
-                <strong>{personalInfo.location}</strong>
+              <div className="contact__detail-link">
+                <div className="contact__detail-icon">
+                  <MapPin size={16} />
+                </div>
+                <div className="contact__detail-content">
+                  <small>Location</small>
+                  <strong>{personalInfo.location}</strong>
+                </div>
               </div>
             </div>
 
