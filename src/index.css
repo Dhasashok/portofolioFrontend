@@ -596,8 +596,8 @@ html.dark .loader-letter {
   font-size: 0.8125rem;
   color: var(--color-primary);
   font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  letter-spacing: normal;
+  text-transform: none;
   line-height: 1.35;
 }
 
@@ -690,9 +690,9 @@ html.dark .loader-letter {
 
 .project-case__stat-badge {
   font-family: var(--font-mono, monospace);
-  font-size: 0.72rem;
+  font-size: 0.8125rem;
   font-weight: 600;
-  color: var(--color-text-muted);
+  color: var(--color-text-secondary);
 }
 
 .project-case__links {
@@ -839,12 +839,12 @@ html.dark .loader-letter {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  padding: 0.25rem 0.6rem;
-  border-radius: 6px;
-  background: rgba(15, 12, 24, 0.78);
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-sm, 6px);
+  background: rgba(15, 12, 24, 0.85);
   backdrop-filter: blur(8px);
   color: #f5f3ff;
-  font-size: 0.68rem;
+  font-size: 0.8125rem;
   font-weight: 500;
 }
 
@@ -866,7 +866,7 @@ html.dark .loader-letter {
 
 .mockup-stat-chip span {
   display: block;
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   color: var(--color-text-muted);
   font-family: var(--font-mono, monospace);
 }
@@ -1482,16 +1482,16 @@ html.dark .btn--copied {
 }
 
 .hero-centered__social-link {
-  width: 42px;
-  height: 42px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   border: 1px solid var(--color-border);
   background: var(--color-surface);
-  color: var(--color-text-secondary);
+  color: var(--color-text);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   transition: all 0.22s ease;
   text-decoration: none;
 }
@@ -1501,7 +1501,12 @@ html.dark .btn--copied {
   color: var(--color-primary);
   border-color: var(--color-primary);
   background: var(--color-surface-soft);
-  box-shadow: 0 8px 18px rgba(124, 58, 237, 0.18);
+  box-shadow: 0 8px 20px rgba(124, 58, 237, 0.22);
+}
+
+.hero-centered__social-link svg {
+  width: 20px;
+  height: 20px;
 }
 
 /* ==========================================================================
@@ -1963,6 +1968,51 @@ html, body, #root, .app {
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
   gap: 1.25rem;
   margin-top: 2.5rem;
+}
+
+/* Equalize About Me Column Heights */
+.about__grid {
+  grid-template-columns: 0.85fr 1.15fr;
+  align-items: stretch !important;
+  gap: 1.5rem;
+  display: grid;
+}
+
+.about__profile-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.about__profile-card > div:last-child {
+  margin-top: auto;
+}
+
+/* Enforce radii consistency across remaining components */
+.mockup-station,
+.project-case__features,
+.about__learning,
+.about__bio {
+  border-radius: var(--radius-lg) !important;
+}
+
+.mockup-stat-chip,
+.about__avatar {
+  border-radius: var(--radius-md) !important;
+}
+
+.skill-card__skill {
+  border-radius: var(--radius-sm) !important;
+}
+
+/* Micro-Typography Clamping */
+.mockup-stat-chip span,
+.experience__note,
+.about__detail-label,
+.contact__detail-content small,
+.about__status {
+  font-size: var(--text-2xs) !important;
 }
 
 

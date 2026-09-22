@@ -6,7 +6,7 @@ import {
   Phone, 
   FileText, 
   Award,
-  ExternalLink
+  ArrowUpRight
 } from 'lucide-react';
 import { LinkedinIcon, GithubIcon } from './Icons';
 import { personalInfo } from '../data/portfolioData';
@@ -117,7 +117,7 @@ export default function About() {
             </div>
 
             {/* Resume Action Button */}
-            <div style={{ marginTop: '0.75rem' }}>
+            <div style={{ marginTop: 'auto', paddingTop: '1rem' }}>
               <a
                 href={personalInfo.resumeUrl}
                 target="_blank"
@@ -127,9 +127,9 @@ export default function About() {
                 title="Open Resume in new tab"
                 aria-label="Open Resume in new tab"
               >
-                <FileText size={16} />
+                <FileText size={15} aria-hidden="true" />
                 <span>Resume</span>
-                <ExternalLink size={14} className="opacity-80" />
+                <ArrowUpRight size={14} className="opacity-80" aria-hidden="true" />
               </a>
             </div>
           </div>

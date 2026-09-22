@@ -22,15 +22,34 @@ export default function Experience() {
           {/* Left Sticky Intro Card */}
           <div className="experience__intro card">
             <div className="experience__intro-icon">
-              <Briefcase size={22} />
+              <Briefcase size={22} aria-hidden="true" />
             </div>
             <span className="experience__intro-label">Career Path</span>
             <h3>Practical Industry Exposure</h3>
             <p>
-              Gained hands-on experience in production web workflows, component design, DOM manipulation, and full-stack modules.
+              Hands-on engineering across production web workflows, component architecture, responsive design, and full-stack REST API integrations.
             </p>
+
+            {/* Career Metrics & Competencies */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '0.75rem', margin: '1.25rem 0' }}>
+              <div style={{ padding: '0.75rem 0.85rem', background: 'var(--color-surface-soft)', borderRadius: 'var(--radius-md)', border: '1px solid var(--color-border-light)' }}>
+                <strong style={{ display: 'block', fontSize: '1.25rem', color: 'var(--color-primary)', fontWeight: '700' }}>2</strong>
+                <span style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-text-secondary)', fontWeight: '500' }}>Verified Internships</span>
+              </div>
+              <div style={{ padding: '0.75rem 0.85rem', background: 'var(--color-surface-soft)', borderRadius: 'var(--radius-md)', border: '1px solid var(--color-border-light)' }}>
+                <strong style={{ display: 'block', fontSize: '1.25rem', color: 'var(--color-primary)', fontWeight: '700' }}>100%</strong>
+                <span style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-text-secondary)', fontWeight: '500' }}>Task Delivery</span>
+              </div>
+            </div>
+
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', marginBottom: '0.75rem' }}>
+              <span className="tech-pill">Frontend Modules</span>
+              <span className="tech-pill">API Integration</span>
+              <span className="tech-pill">Agile Sprints</span>
+            </div>
+
             <div className="experience__line" />
-            <span className="experience__note">2 Verified Internships Completed</span>
+            <span className="experience__note">Verified Software Engineering Internships</span>
           </div>
 
           {/* Right Timeline List */}

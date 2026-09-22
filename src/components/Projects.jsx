@@ -153,22 +153,22 @@ export default function Projects() {
                             target="_blank"
                             rel="noopener noreferrer"
                             className="project-case__btn"
-                            aria-label={`${project.title} Frontend Source Code Repository`}
-                            title="Frontend (Client) Repository"
+                            aria-label={`${project.title} Frontend Source Code`}
+                            title="View Frontend Code"
                           >
                             <GithubIcon className="w-3.5 h-3.5" />
-                            <span>Frontend Code</span>
+                            <span>View Code (Frontend)</span>
                           </a>
                           <a
                             href={project.githubBackend}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="project-case__btn"
-                            aria-label={`${project.title} Backend Source Code Repository`}
-                            title="Backend (API Server) Repository"
+                            aria-label={`${project.title} Backend Source Code`}
+                            title="View Backend Code"
                           >
                             <GithubIcon className="w-3.5 h-3.5" />
-                            <span>Backend Code</span>
+                            <span>View Code (Backend)</span>
                           </a>
                         </>
                       ) : project.githubUrl ? (
@@ -177,11 +177,11 @@ export default function Projects() {
                           target="_blank"
                           rel="noopener noreferrer"
                           className="project-case__btn"
-                          aria-label={`${project.title} Source Code Repository`}
-                          title="Source Code Repository"
+                          aria-label={`${project.title} Source Code`}
+                          title="View Source Code"
                         >
                           <GithubIcon className="w-3.5 h-3.5" />
-                          <span>Source Code</span>
+                          <span>View Code</span>
                         </a>
                       ) : null}
 

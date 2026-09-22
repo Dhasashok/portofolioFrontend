@@ -156,7 +156,7 @@ export default function Hero() {
                 aria-label="GitHub"
                 title="GitHub Profile"
               >
-                <GithubIcon className="w-4 h-4" />
+                <GithubIcon className="w-5 h-5" />
               </a>
             )}
 
@@ -168,7 +168,7 @@ export default function Hero() {
               aria-label="LinkedIn"
               title="LinkedIn Profile"
             >
-              <LinkedinIcon className="w-4 h-4" />
+              <LinkedinIcon className="w-5 h-5" />
             </a>
 
             <a
@@ -177,7 +177,7 @@ export default function Hero() {
               aria-label="Email"
               title="Send an Email"
             >
-              <Mail size={16} />
+              <Mail size={20} />
             </a>
 
             <a
@@ -186,7 +186,7 @@ export default function Hero() {
               aria-label="Phone"
               title="Phone Contact"
             >
-              <Phone size={16} />
+              <Phone size={20} />
             </a>
           </div>
 
