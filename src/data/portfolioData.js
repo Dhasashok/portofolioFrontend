@@ -185,38 +185,51 @@ export const projectsData = [
   },
   {
     id: "mediqueue",
-    featured: false,
-    title: "MediQueue – Hospital Queue Management System",
-    category: "Healthcare OPD · Real-Time",
+    featured: true,
+    title: "MediQueue – AI Hospital Queue & Appointment Platform",
+    category: "AI-Driven Healthcare • Full-Stack",
     period: "2025 – 2026",
-    oneline: "Eliminates waiting room overcrowding via real-time WebSocket token progression and tri-role dashboards.",
-    tagline: "Smart OPD Queue & Patient Flow Optimization System",
-    description: "A synchronized hospital management suite designed to streamline outpatient flow with instant digital token generation, real-time consultation tracking, and digital prescription delivery.",
-    technologies: ["React.js", "Node.js", "Express.js", "MySQL", "Socket.io", "JWT", "Nodemailer"],
+    oneline: "Eliminates waiting room overcrowding via Random Forest wait forecasting, dynamic slot sizing, and real-time WebSocket token progression.",
+    tagline: "Smart AI-Powered Hospital Queue Optimization & Appointment Platform",
+    description: "An intelligent multi-tier healthcare orchestration platform that predicts outpatient wait times using machine learning, automatically sizes 2-hour consultation slots, issues touchless QR passes, and delivers live token progression across mobile and desktop interfaces.",
+    technologies: [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "Python",
+      "Flask",
+      "Scikit-Learn",
+      "MySQL / TiDB",
+      "Socket.io",
+      "JWT",
+      "Nodemailer"
+    ],
     stats: [
-      { label: "Dashboards", value: "3 Roles" },
+      { label: "AI Engine", value: "Random Forest" },
+      { label: "Prediction Latency", value: "<15ms" },
       { label: "Real-Time Engine", value: "Socket.io" },
-      { label: "Verification", value: "OTP + JWT" },
       { label: "Check-in", value: "QR Enabled" }
     ],
     features: [
-      "Tri-role synchronized dashboards tailored for Patients, Doctors, and Hospital Admins",
-      "Real-time WebSocket token progression via Socket.io with zero manual page refreshes",
-      "QR-based express check-in reducing reception counter bottlenecks and wait times",
-      "Digital prescription authoring and automated email delivery via Nodemailer",
-      "Stateless JWT authentication paired with OTP verification for patient records security",
-      "MySQL relational schema optimized with indexed queues and doctor consultation states"
+      "AI wait time forecasting using a 14-feature Random Forest Regressor pre-trained on 5,000+ clinical records",
+      "Dynamic slot capacity engine recalibrating 2-hour appointment limits: ⌊120 / avg_consultation_mins⌋",
+      "Staggered arrival windows (~30 mins before consultation) reducing waiting room density",
+      "Automated continuous retraining pipeline (retrain.py) with statistical IQR outlier filtering and zero-PII privacy views",
+      "Mobile-first clinical interface with a 2x2 quick action matrix, live OPD wait ticker, and bottom dock navigation",
+      "Tri-role synchronized dashboards (Patient, Doctor, Admin) with instant Socket.io WebSocket token broadcast",
+      "Contactless QR-code arrival verification and digital e-prescription delivery via Nodemailer"
     ],
     architecture: {
-      frontend: "React.js with multi-role views, live queue visualizers, and digital prescription creation.",
-      backend: "Node.js & Express.js with Socket.io WebSockets for live status synchronization.",
-      database: "MySQL relational database for patient records, appointments, and prescriptions.",
-      communication: "Nodemailer for automated email notifications, token alerts, and OTP verification."
+      frontend: "React 18 SPA with mobile-first responsive 2x2 matrix, live queue visualizers, and QR token pass.",
+      backend: "Node.js & Express.js with Socket.io WebSockets, JWT authentication, and resilient DB fallback logic.",
+      ml: "Python 3.11 & Flask microservice running Random Forest regression with token-secured continuous retraining.",
+      database: "MySQL 8.0 / TiDB Cloud with indexed consultation queues and anonymized v_ml_clean_metrics view.",
+      communication: "Nodemailer for OTP verification, booking passes, and digital prescription delivery."
     },
     githubUrl: "https://github.com/Dhasashok/mediqueue",
     liveUrl: "https://frontend-phi-ruby-62.vercel.app/",
     image: "/projects/mediqueue-preview.png",
-    statBadge: "3 Synchronized Roles · Real-Time WebSockets · Deployed Live"
+    statBadge: "Random Forest ML • Dynamic Slot Sizing • WebSockets • Deployed Live"
   }
 ];
 
