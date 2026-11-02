@@ -94,15 +94,15 @@ export default function Contact() {
           
           {/* Main Left Area: Heading, Intro & Form */}
           <div className="contact__main">
-            <span className="contact__label">GET IN TOUCH</span>
-            <h3>Let's Build Something Great</h3>
+            <span className="contact__label">Contact</span>
+            <h3>Let's Connect</h3>
             <p>
-              I'm currently open to Software Developer, Full Stack Developer and SDE opportunities. If you're looking for a motivated developer who enjoys building practical software solutions, let's connect.
+              I am open to Software Engineer and Full-Stack Developer opportunities. Feel free to reach out directly or send a message below.
             </p>
 
             {submitStatus === 'success' && (
               <div style={{ background: '#f0fdf4', border: '1px solid #bbf7d0', color: '#15803d', padding: '0.75rem 1rem', borderRadius: '0.75rem', marginBottom: '1.25rem', fontSize: 'var(--text-xs)' }}>
-                <strong>Message Dispatched!</strong> Thank you for reaching out, Ashok will respond soon.
+                <strong>Message Sent!</strong> Thanks for reaching out — I will get back to you shortly.
               </div>
             )}
 

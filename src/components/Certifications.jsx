@@ -9,10 +9,10 @@ export default function Certifications() {
         
         {/* Section Heading */}
         <div className="section-heading">
-          <span className="section-label">Credentials</span>
-          <h2 className="section-title">Certifications</h2>
+          <span className="section-label">Certifications</span>
+          <h2 className="section-title">Certifications & Training</h2>
           <p className="section-description">
-            Verified course completions and technical specializations.
+            Technical training programs and verified course completions.
           </p>
         </div>
 

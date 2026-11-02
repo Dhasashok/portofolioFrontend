@@ -10,7 +10,7 @@ export const personalInfo = {
   linkedin: "https://www.linkedin.com/in/ashok-dhas-849664377/",
   github: "https://github.com/Dhasashok",
   resumeUrl: "/Ashok_Rohidas_Dhas_Resume.pdf",
-  availability: "Open for SDE & Full Stack Opportunities",
+  availability: "Open to Software Engineer & Full-Stack Roles",
   college: "Genba Sopanrao Moze College of Engineering, Pune (GSMCOE)",
   degree: "B.E. Computer Engineering",
   cgpa: "8.50 / 10",
@@ -20,56 +20,55 @@ export const personalInfo = {
     "Software Developer"
   ],
   heroRoles: [
-    "Software Developer",
-    "Full Stack Developer",
-    "Java Developer",
-    "React.js Developer",
-    "Node.js Developer"
+    "Full-Stack Software Engineer",
+    "React.js & Node.js Developer",
+    "Backend & REST API Developer",
+    "Software Development Engineer"
   ],
-  heroBio: "Full-Stack Software Developer building scalable web applications with React, Node.js, and Cloud Databases. Engineered production systems including a PG operations platform saving 15+ hrs/week and a live hospital queue management system.",
+  heroBio: "Software engineer building full-stack web applications with React, Node.js, and relational databases. Built MediQueue for real-time OPD queue management and Royal Orchid PG ERP to automate daily operations.",
   aboutBio: [
-    "I am a B.E. Computer Engineering graduate from Genba Sopanrao Moze College of Engineering, Pune, with a CGPA of 8.50/10. I have hands-on experience in Java, JavaScript, React.js, Node.js, Express.js, and MySQL, along with practical exposure to full-stack web development.",
-    "I enjoy building practical software solutions, designing responsive interfaces, developing REST APIs, integrating databases, and solving real-world problems through technology.",
-    "I am currently seeking Software Development Engineer and Full Stack Developer opportunities where I can contribute my programming and problem-solving skills while continuing to grow as a software engineer."
+    "I am a Computer Engineering graduate from Genba Sopanrao Moze College of Engineering, Pune (SPPU), with an 8.50/10 CGPA.",
+    "My focus is on full-stack web development using React.js, Node.js, Express, and MySQL. I enjoy designing clean REST APIs, modeling relational databases, and building responsive frontends.",
+    "I am actively seeking Software Engineer and Full-Stack Developer opportunities where I can write solid production code and help solve practical business problems."
   ],
   stats: [
     { label: "CGPA", value: "8.50", subtext: "SPPU Pune" },
-    { label: "Internships", value: "2", subtext: "Web & Full Stack" },
-    { label: "Major Full-Stack Projects", value: "2", subtext: "Production Ready" },
-    { label: "REST APIs", value: "40+", subtext: "Engineered & Tested" }
+    { label: "Internships", value: "2", subtext: "Completed" },
+    { label: "Full-Stack Projects", value: "2", subtext: "Deployed Live" },
+    { label: "REST APIs", value: "40+", subtext: "Built & Tested" }
   ]
 };
 
 export const servicesData = [
   {
     id: "full-stack",
-    title: "Full-Stack System Architecture",
-    description: "Engineering end-to-end web applications integrating reactive frontends, resilient Node.js services, and relational database layers.",
-    badge: "End-to-End",
+    title: "Full-Stack Web Development",
+    description: "Building complete web applications connecting responsive React frontends, Node.js services, and relational databases.",
+    badge: "Full-Stack",
     technologies: ["React.js", "Node.js", "Express.js", "MySQL", "REST API", "Vercel"],
     color: "purple"
   },
   {
     id: "frontend",
-    title: "Modern Reactive Frontend",
-    description: "Crafting high-performance, accessible, and responsive interfaces with modular React component patterns and state management.",
-    badge: "UI/UX & SPAs",
+    title: "Frontend Engineering",
+    description: "Developing responsive, accessible interfaces with modular React component architecture and modern CSS.",
+    badge: "Frontend",
     technologies: ["React.js", "JavaScript ES6+", "HTML5", "CSS3", "Responsive UI"],
     color: "blue"
   },
   {
     id: "backend",
-    title: "Scalable Backend & Real-Time APIs",
-    description: "Developing secured RESTful endpoints, role-based authorization (RBAC), stateless JWT authentication, and live Socket.io WebSockets.",
-    badge: "Scalable APIs",
+    title: "Backend & RESTful APIs",
+    description: "Designing REST endpoints, role-based authorization, JWT authentication, and real-time WebSockets with Socket.io.",
+    badge: "Backend & APIs",
     technologies: ["Node.js", "Express.js", "JWT Auth", "RBAC", "Socket.io", "Postman"],
     color: "green"
   },
   {
     id: "database",
-    title: "Relational & Cloud Databases",
-    description: "Designing normalized SQL schemas, indexing strategies, and integrating cloud database environments like TiDB Cloud and MySQL.",
-    badge: "Data Architecture",
+    title: "Database Design & SQL",
+    description: "Modeling relational schemas, writing efficient queries, and integrating cloud database environments like MySQL and TiDB.",
+    badge: "Database",
     technologies: ["MySQL", "TiDB Cloud", "Database Design", "SQL Modeling", "Workbench"],
     color: "orange"
   }
@@ -124,9 +123,9 @@ export const experienceData = [
     type: "Internship",
     technologies: ["HTML", "CSS", "JavaScript"],
     responsibilities: [
-      "Created responsive web pages using HTML, CSS, and JavaScript with cross-device compatibility.",
-      "Enhanced interactive UI features using JavaScript DOM manipulation.",
-      "Completed assigned development tasks within the internship timeline."
+      "Built responsive web pages and landing layouts with clean, cross-device compatibility.",
+      "Implemented interactive user interface features using modern JavaScript DOM manipulation.",
+      "Collaborated with project mentors to review code and deliver tasks within milestones."
     ]
   },
   {
@@ -138,9 +137,9 @@ export const experienceData = [
     type: "Internship",
     technologies: ["Frontend Development", "Backend Development", "Full Stack Development"],
     responsibilities: [
-      "Participated in web development tasks across multiple application modules.",
-      "Gained practical exposure to frontend and backend development workflows.",
-      "Assisted the development team with assigned tasks and project modules."
+      "Contributed to frontend and backend module development across active web applications.",
+      "Assisted with RESTful API integration, data validation, and UI component styling.",
+      "Participated in sprint standups, bug resolution, and application workflow testing."
     ]
   }
 ];
@@ -151,23 +150,23 @@ export const projectsData = [
     featured: true,
     title: "Royal Orchid – PG Management System",
     category: "Accommodation · Full Stack",
-    oneline: "Automates tenant onboarding, live bed allocations, rent accounting, and grievance resolution.",
-    tagline: "Comprehensive Accommodation & Tenant Operations Management Platform",
-    description: "Built a production-ready full-stack accommodation portal that automates daily operational workflows for PG owners, eliminating manual registers and spreadsheet errors.",
+    oneline: "Automates tenant onboarding, live room allocations, monthly rent accounting, and grievance tracking.",
+    tagline: "Operations & Tenant Management Platform",
+    description: "Full-stack operations platform for PG owners and residents that automates daily workflows, rent collection, and room occupancy tracking in place of manual registers.",
     technologies: ["React.js", "Node.js", "Express.js", "TiDB Cloud", "Vercel", "Render", "TestSprite", "JWT"],
     stats: [
-      { label: "Manual Time Saved", value: "15 hrs/wk" },
+      { label: "Time Saved", value: "15 hrs/wk" },
       { label: "REST APIs", value: "40+" },
       { label: "Security", value: "JWT + RBAC" },
-      { label: "Cloud DB", value: "TiDB Cloud" }
+      { label: "Database", value: "Cloud SQL" }
     ],
     features: [
-      "Real-time bed allocation and interactive room occupancy visualization",
-      "Automated rent collection, invoice generation, and financial ledger logs",
-      "Tenant grievance dispatch system with priority categorization and resolution tracking",
-      "Role-Based Access Control (RBAC) securing resident, staff, and owner portals",
-      "Engineered 40+ REST API endpoints tested and benchmarked via TestSprite",
-      "High-availability multi-tier deployment across Vercel, Render, and TiDB Distributed SQL"
+      "Interactive room visualizer with real-time bed allocation and occupancy status",
+      "Automated rent invoicing, payment status tracking, and financial history logs",
+      "Tenant maintenance request portal with priority status and resolution tracking",
+      "Role-based access control (RBAC) separating admin, staff, and resident views",
+      "Over 40 REST API endpoints tested and verified for data consistency",
+      "Deployed live with Vercel frontend, Render backend, and Cloud SQL database"
     ],
     architecture: {
       frontend: "React.js dynamic client with modular component design and responsive dashboards.",
@@ -181,17 +180,17 @@ export const projectsData = [
     githubBackend: "https://github.com/Dhasashok/pgmanagement-backend",
     liveUrl: "https://pgmanagement-frontend.vercel.app/",
     image: "/projects/royal-orchid-preview.png",
-    statBadge: "15 hrs/wk Saved · 40+ APIs · Deployed Live"
+    statBadge: "15 hrs/wk Saved · 40+ APIs · Live Deployment"
   },
   {
     id: "mediqueue",
     featured: true,
-    title: "MediQueue – AI Hospital Queue & Appointment Platform",
-    category: "AI-Driven Healthcare • Full-Stack",
+    title: "MediQueue – Hospital Queue & Appointment Platform",
+    category: "Healthcare · Full-Stack & ML",
     period: "2025 – 2026",
-    oneline: "Eliminates waiting room overcrowding via Random Forest wait forecasting, dynamic slot sizing, and real-time WebSocket token progression.",
-    tagline: "Smart AI-Powered Hospital Queue Optimization & Appointment Platform",
-    description: "An intelligent multi-tier healthcare orchestration platform that predicts outpatient wait times using machine learning, automatically sizes 2-hour consultation slots, issues touchless QR passes, and delivers live token progression across mobile and desktop interfaces.",
+    oneline: "Reduces clinic wait times through predicted arrival windows, dynamic queue capacity, and real-time WebSocket token tracking.",
+    tagline: "Smart Hospital Queue Management & Appointment Platform",
+    description: "Full-stack hospital queue system that estimates patient wait times using machine learning, allocates consultation slots dynamically, and broadcasts live token progression to patients and doctors.",
     technologies: [
       "React.js",
       "Node.js",
@@ -205,31 +204,30 @@ export const projectsData = [
       "Nodemailer"
     ],
     stats: [
-      { label: "AI Engine", value: "Random Forest" },
-      { label: "Prediction Latency", value: "<15ms" },
-      { label: "Real-Time Engine", value: "Socket.io" },
+      { label: "Wait Predictor", value: "ML Model" },
+      { label: "Latency", value: "<15ms" },
+      { label: "Live Sync", value: "Socket.io" },
       { label: "Check-in", value: "QR Enabled" }
     ],
     features: [
-      "AI wait time forecasting using a 14-feature Random Forest Regressor pre-trained on 5,000+ clinical records",
-      "Dynamic slot capacity engine recalibrating 2-hour appointment limits: ⌊120 / avg_consultation_mins⌋",
-      "Staggered arrival windows (~30 mins before consultation) reducing waiting room density",
-      "Automated continuous retraining pipeline (retrain.py) with statistical IQR outlier filtering and zero-PII privacy views",
-      "Mobile-first clinical interface with a 2x2 quick action matrix, live OPD wait ticker, and bottom dock navigation",
-      "Tri-role synchronized dashboards (Patient, Doctor, Admin) with instant Socket.io WebSocket token broadcast",
-      "Contactless QR-code arrival verification and digital e-prescription delivery via Nodemailer"
+      "Wait-time estimation model trained on outpatient consultation data to provide realistic arrival windows",
+      "Dynamic appointment slot sizing based on average doctor consultation duration",
+      "Live queue progression broadcast via Socket.io WebSockets for patients and staff",
+      "Multi-role dashboards tailored for patients, OPD receptionists, and doctors",
+      "Touchless digital QR pass verification for fast walk-in and appointment check-in",
+      "Automated notifications and prescription delivery via email integration"
     ],
     architecture: {
-      frontend: "React 18 SPA with mobile-first responsive 2x2 matrix, live queue visualizers, and QR token pass.",
-      backend: "Node.js & Express.js with Socket.io WebSockets, JWT authentication, and resilient DB fallback logic.",
-      ml: "Python 3.11 & Flask microservice running Random Forest regression with token-secured continuous retraining.",
-      database: "MySQL 8.0 / TiDB Cloud with indexed consultation queues and anonymized v_ml_clean_metrics view.",
-      communication: "Nodemailer for OTP verification, booking passes, and digital prescription delivery."
+      frontend: "React 18 SPA with responsive dashboards, live queue visualizer, and QR token pass.",
+      backend: "Node.js & Express.js with Socket.io WebSockets, JWT authentication, and structured error handling.",
+      ml: "Python & Flask microservice providing wait-time estimates from regression models.",
+      database: "MySQL / TiDB Cloud with indexed queue tables and optimized lookup views.",
+      communication: "Nodemailer for confirmation emails, digital passes, and prescription receipts."
     },
     githubUrl: "https://github.com/Dhasashok/mediqueue",
     liveUrl: "https://frontend-phi-ruby-62.vercel.app/",
     image: "/projects/mediqueue-preview.png",
-    statBadge: "Random Forest ML • Dynamic Slot Sizing • WebSockets • Deployed Live"
+    statBadge: "ML Wait Estimator · Dynamic Slots · WebSockets · Live Deployment"
   }
 ];
 

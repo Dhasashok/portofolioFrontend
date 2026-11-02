@@ -9,10 +9,10 @@ export default function Education() {
         
         {/* Section Heading */}
         <div className="section-heading">
-          <span className="section-label">Academic Background</span>
-          <h2 className="section-title">Education</h2>
+          <span className="section-label">Education</span>
+          <h2 className="section-title">Academic Background</h2>
           <p className="section-description">
-            Computer engineering qualifications, marks, and academic achievements.
+            Formal engineering education, degree milestones, and academic performance.
           </p>
         </div>
 

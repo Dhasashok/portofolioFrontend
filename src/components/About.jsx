@@ -21,7 +21,7 @@ export default function About() {
           <span className="section-label">Who I Am</span>
           <h2 className="section-title">About Me</h2>
           <p className="section-description">
-            A glance into my academic background, technical focus, and passion for software development.
+            Academic background, core technical focus, and engineering experience.
           </p>
         </div>
 
@@ -35,7 +35,7 @@ export default function About() {
                 <Award size={28} style={{ color: 'var(--color-primary)' }} />
               </div>
               <div className="about__identity">
-                <span className="section-label" style={{ marginBottom: '0.2rem' }}>Candidate Overview</span>
+                <span className="section-label" style={{ marginBottom: '0.2rem' }}>Profile Summary</span>
                 <h3 style={{ fontSize: '1.2rem', fontWeight: '700' }}>Full Stack Engineer</h3>
                 <div className="about__status" style={{ marginTop: '0.4rem' }}>
                   <span className="about__status-dot" />
@@ -50,7 +50,7 @@ export default function About() {
                   <GraduationCap size={16} />
                 </div>
                 <div>
-                  <span className="about__detail-label">Degree & Institution</span>
+                  <span className="about__detail-label">Education</span>
                   <strong>{personalInfo.degree} (SPPU)</strong>
                 </div>
               </div>
@@ -60,7 +60,7 @@ export default function About() {
                   <MapPin size={16} />
                 </div>
                 <div>
-                  <span className="about__detail-label">Base Location</span>
+                  <span className="about__detail-label">Location</span>
                   <strong>{personalInfo.location} · Open to Remote</strong>
                 </div>
               </div>
@@ -70,7 +70,7 @@ export default function About() {
                   <Award size={16} />
                 </div>
                 <div>
-                  <span className="about__detail-label">Core Specialization</span>
+                  <span className="about__detail-label">Tech Stack</span>
                   <strong>React, Node.js, Express & SQL</strong>
                 </div>
               </div>
@@ -83,7 +83,7 @@ export default function About() {
                 className="btn btn-primary"
                 style={{ width: '100%', justifyContent: 'center', minHeight: '42px' }}
               >
-                <span>Initiate Contact</span>
+                <span>Get in Touch</span>
                 <ArrowUpRight size={15} aria-hidden="true" />
               </a>
 
@@ -97,7 +97,7 @@ export default function About() {
                 aria-label="Open Resume in new tab"
               >
                 <FileText size={15} aria-hidden="true" />
-                <span>View Full Resume</span>
+                <span>View Resume</span>
               </a>
             </div>
           </div>
@@ -105,9 +105,9 @@ export default function About() {
           {/* Right Column: Bio and Highlights */}
           <div className="about__content">
             <div className="about__bio card">
-              <span className="about__small-label">Background & Aspirations</span>
+              <span className="about__small-label">Background & Focus</span>
               <h3>
-                Engineering Practical & <span>Scalable Software</span>
+                Building Practical & <span>Reliable Systems</span>
               </h3>
               <p>{personalInfo.aboutBio[0]}</p>
               <p>{personalInfo.aboutBio[1]}</p>

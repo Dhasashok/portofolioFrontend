@@ -9,10 +9,10 @@ export default function Experience() {
         
         {/* Section Heading */}
         <div className="section-heading">
-          <span className="section-label">Career Journey</span>
+          <span className="section-label">Experience</span>
           <h2 className="section-title">Work Experience</h2>
           <p className="section-description">
-            Practical full-stack and web development internships delivering user interfaces and backend tasks.
+            Internships and software development roles building web interfaces and backend services.
           </p>
         </div>
 
@@ -26,10 +26,10 @@ export default function Experience() {
                 <Briefcase size={22} aria-hidden="true" />
               </div>
               <div>
-                <span className="experience__intro-label">Career Path</span>
-                <h3>Practical Industry Exposure</h3>
+                <span className="experience__intro-label">Industry Background</span>
+                <h3>Internship Experience</h3>
                 <p>
-                  Hands-on engineering across production web workflows, component architecture, responsive design, and full-stack REST API integrations.
+                  Experience across responsive interface design, component-driven development, and REST API integration.
                 </p>
               </div>
             </div>
@@ -38,11 +38,11 @@ export default function Experience() {
               <div className="experience__intro-stats">
                 <div className="experience__stat-box">
                   <strong>2</strong>
-                  <span>Verified Internships</span>
+                  <span>Internships Completed</span>
                 </div>
                 <div className="experience__stat-box">
                   <strong>100%</strong>
-                  <span>Task Delivery</span>
+                  <span>On-Time Delivery</span>
                 </div>
               </div>
 
@@ -65,7 +65,7 @@ export default function Experience() {
                     <h3>{item.role}</h3>
                     <p className="experience-card__company">{item.company}</p>
                   </div>
-                  <span className="experience-card__current">Verified</span>
+                  <span className="experience-card__current">Completed</span>
                 </div>
 
                 <div className="experience-card__meta">

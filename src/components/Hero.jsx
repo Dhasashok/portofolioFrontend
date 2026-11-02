@@ -12,8 +12,8 @@ import { personalInfo } from '../data/portfolioData';
 const ROLES = [
   "Full-Stack Software Engineer",
   "React.js & Node.js Developer",
-  "Real-Time Systems Builder",
-  "Distributed SQL & API Architect"
+  "Backend & REST API Developer",
+  "Software Development Engineer"
 ];
 
 export default function Hero() {
@@ -94,7 +94,7 @@ export default function Hero() {
               <span className="hero__status-ping" />
               <span className="hero__status-dot" />
             </span>
-            <span>Available for Immediate Full-Time Hire</span>
+            <span>Open to Software Engineer & Full-Stack Roles</span>
           </div>
 
           <p className="hero-centered__greeting">Hi, I'm</p>
@@ -105,7 +105,7 @@ export default function Hero() {
 
           {/* Dynamic Typewriter Role */}
           <div className="hero-centered__typewriter">
-            <span className="hero-centered__typewriter-prefix">Specializing in: </span>
+            <span className="hero-centered__typewriter-prefix">Focused on: </span>
             <span className="hero-centered__typewriter-text">{displayText}</span>
             <span className="hero-centered__cursor" />
           </div>
@@ -121,7 +121,7 @@ export default function Hero() {
               onClick={() => scrollToSection('projects')}
               className="btn btn-primary hero-centered__btn"
             >
-              <span>View Featured Projects</span>
+              <span>View Projects</span>
               <ArrowRight size={15} />
             </button>
 

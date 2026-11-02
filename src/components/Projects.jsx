@@ -18,7 +18,7 @@ export default function Projects() {
           <span className="section-label">Selected Work</span>
           <h2 className="section-title">Featured Projects</h2>
           <p className="section-description">
-            Production-grade full-stack web applications engineered for scalability, real-time synchronization, and automated business workflows.
+            Full-stack web applications built to solve operational bottlenecks and real-world workflows.
           </p>
         </div>
 
@@ -127,7 +127,7 @@ export default function Projects() {
 
                   <details className="project-case__features">
                     <summary className="project-case__features-title" style={{ cursor: 'pointer', listStyle: 'none' }}>
-                      <span>Key Capabilities & Deliverables ({project.features.length})</span>
+                      <span>Key Features & Architecture ({project.features.length})</span>
                       <span className="project-case__expand-indicator">▼</span>
                     </summary>
                     <ul style={{ marginTop: '0.75rem' }}>

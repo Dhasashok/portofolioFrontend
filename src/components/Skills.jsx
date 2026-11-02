@@ -35,9 +35,9 @@ export default function Skills() {
         {/* Section Heading */}
         <div className="section-heading">
           <span className="section-label">Technical Stack</span>
-          <h2 className="section-title">Skills & Abilities</h2>
+          <h2 className="section-title">Technical Skills</h2>
           <p className="section-description">
-            Categorized technologies and tools I utilize for software engineering.
+            Languages, frameworks, and tools I use to build full-stack web applications.
           </p>
         </div>
 
